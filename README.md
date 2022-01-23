@@ -12,6 +12,6 @@ Before going live make sure you've marked all of the following:
 - [ ] `client/projects/cms/src/environment/static-config.ts` has been adjusted to your projects requirements.
 - [ ] You added `FIREBASE_TOKEN` and `SERVICE_ACCOUNT` to your secrets in github.
 - [ ] You adjusted `client/projects/web/scr/app/consts/base-title.const.ts` to your projects title.
-- [ ] You changed "jaspero-jms" in `.github/workflows/web.workflow.yml` and `.github/workflows/cms.workflow.yml` to your project id
+- [ ] You changed "clarity-ssu" in `.github/workflows/web.workflow.yml` and `.github/workflows/cms.workflow.yml` to your project id
 - [ ] You updated `.firebaserc` with your projects data
 - [ ] You changed the meta tags in `client/projects/web/src/index.html`

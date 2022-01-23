@@ -5,12 +5,12 @@ let environment: any = process.argv[2] || 'd';
 
 if (environment === 'd') {
   environment = {
-    projectId: 'jaspero-jms'
+    projectId: 'clarity-ssu'
   };
 } else {
   environment = {
     credential: admin.credential.cert('./serviceAccountKey.json'),
-    databaseURL: 'https://jaspero-jms.firebaseio.com'
+    databaseURL: 'https://clarity-ssu.firebaseio.com'
   };
 }
 

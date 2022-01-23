@@ -1,17 +1,17 @@
 {
   "targets": {
-    "jaspero-jms": {
+    "clarity-ssu": {
       "hosting": {
         "cms": [
-          "jaspero-jms"
+          "clarity-ssu"
         ],
         "web": [
-          "jaspero-jms-web"
+          "clarity-ssu-web"
         ]
       }
     }
   },
   "projects": {
-    "default": "jaspero-jms"
+    "default": "clarity-ssu"
   }
 }
