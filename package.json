@@ -1,6 +1,6 @@
 {
-  "name": "@jaspero/jms",
-  "version": "4.21.0",
+  "name": "clarity-sso",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "start:emulator": "firebase emulators:start --export-on-exit=.emulator-export --import=.emulator-export",
@@ -47,24 +47,6 @@
   },
   "homepage": "https://clarity-ssu.firebaseapp.com",
   "devDependencies": {
-    "@semantic-release/changelog": "6.0.1",
-    "@semantic-release/git": "10.0.1",
-    "@semantic-release/npm": "9.0.0",
-    "concurrently": "7.0.0",
-    "semantic-release": "19.0.2"
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      [
-        "@semantic-release/npm",
-        {
-          "npmPublish": false
-        }
-      ],
-      "@semantic-release/git"
-    ]
+    "concurrently": "7.0.0"
   }
 }
