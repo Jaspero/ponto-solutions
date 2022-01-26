@@ -12,7 +12,6 @@ interface FormOptions extends CommonOptions {
 }
 
 @Block({
-  id: 'form',
   label: 'PB.FORM.BLOCKS.FORM.TITLE',
   icon: 'contact_mail',
   previewValue: {
@@ -87,6 +86,4 @@ interface FormOptions extends CommonOptions {
   styleUrls: ['./form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FormComponent extends CommonBlockComponent {
-  @Input() data: FormOptions;
-}
+export class FormComponent extends CommonBlockComponent<FormOptions> {}

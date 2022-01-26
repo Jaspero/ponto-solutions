@@ -8,7 +8,6 @@ interface ContentOptions extends CommonOptions {
 }
 
 @Block({
-  id: 'content',
   label: 'PB.FORM.BLOCKS.CONTENT.TITLE',
   icon: 'subject',
   previewValue: {
@@ -51,7 +50,4 @@ interface ContentOptions extends CommonOptions {
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContentComponent extends CommonBlockComponent {
-  @Input()
-  data: ContentOptions;
-}
+export class ContentComponent extends CommonBlockComponent<ContentOptions> {}

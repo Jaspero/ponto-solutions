@@ -1,11 +1,10 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Auth, signInWithCustomToken} from '@angular/fire/auth';
 import {ActivatedRoute, Router} from '@angular/router';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import {STATIC_CONFIG} from 'projects/cms/src/environments/static-config';
+import {browserLocalPersistence, setPersistence} from '@firebase/auth';
 import {from} from 'rxjs';
 import {switchMap, tap} from 'rxjs/operators';
+import {STATIC_CONFIG} from '../../../environments/static-config';
 
 @Component({
   selector: 'jms-impersonate',
@@ -16,7 +15,7 @@ import {switchMap, tap} from 'rxjs/operators';
 export class ImpersonateComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
-    private afAuth: AngularFireAuth,
+    private auth: Auth,
     private router: Router
   ) { }
 
@@ -24,15 +23,15 @@ export class ImpersonateComponent implements OnInit {
     const {token} = this.activatedRoute.snapshot.queryParams;
 
     if (!token) {
-      // this.router.navigate(STATIC_CONFIG.loginRoute);
+      this.router.navigate(STATIC_CONFIG.loginRoute);
     }
 
     from(
-      firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+      setPersistence(this.auth, browserLocalPersistence)
     )
       .pipe(
         switchMap(() =>
-          this.afAuth.signInWithCustomToken(token)
+          signInWithCustomToken(this.auth, token)
         ),
         tap(() =>
           this.router.navigate(STATIC_CONFIG.dashboardRoute)
