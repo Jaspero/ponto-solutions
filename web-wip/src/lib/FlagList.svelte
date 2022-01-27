@@ -1,0 +1,113 @@
+<script>
+  export let data = {
+    title: undefined,
+    description: undefined,
+    buttonText: undefined,
+    buttonAction: undefined,
+    list: undefined,
+  }
+</script>
+
+<div class="fl">
+  <div class="fl-background"></div>
+  <div class="fl-content">
+    <div class="fl-main">
+      {#if data.title}<h1 class="fl-title">{data.title}</h1>{/if}
+      {#if data.description}<p class="fl-description">{data.description}</p>{/if}
+      {#if data.buttonText}<button class="fl-button">{data.buttonText}</button>{/if}
+    </div>
+    {#if data.list}
+      <ul class="fl-list">
+        {#each data.list as item}
+          <li class="fl-list-item">{item}</li>
+        {/each}
+      </ul>
+    {/if}
+  </div>
+</div>
+
+<style>
+  .fl {
+    position: relative;
+    background: var(--c-dark);
+    padding: 8rem 0;
+  }
+  .fl-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--c-darker);
+    transform-origin: left top;
+    transform: skewX(60deg);
+  }
+  .fl-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    max-width: 70rem;
+    margin: auto;
+  }
+  .fl-main {
+    flex: 0 1 50%;
+    padding: 2rem 1rem;
+  }
+  .fl-title {
+    color: var(--c-light);
+    font-family: var(--f-title);
+    font-size: var(--s-xl);
+    font-weight: normal;
+  }
+  .fl-description {
+    color: var(--c-light);
+    font-size: var(--s-m);
+    margin: 0 0 2.5em;
+    max-width: 34ch;
+    line-height: 2;
+  }
+  .fl-button {
+    border: 1px solid var(--c-blue);
+    background: var(--c-blue);
+    color: var(--c-lighter);
+    display: flex;
+    align-items: center;
+    font-family: var(--f-body);
+    font-size: var(--s-m);
+    line-height: 1.5;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    transition: .2s;
+  }
+  .fl-button::after {
+    content: '';
+    width: .5em;
+    height: .5em;
+    margin-left: .75em;
+    border-right: .15em solid;
+    border-top: .15em solid;
+    transform: translateY(.1em) rotate(45deg);
+  }
+  .fl-button:hover {
+    background: transparent;
+    color: var(--c-blue);
+  }
+  .fl-list {
+    flex: 0 1 50%;
+    font-family: var(--f-title);
+    font-size: var(--s-l);
+    color: var(--c-lighter);
+    list-style: none;
+    padding: 2rem 1rem;
+  }
+  .fl-list-item {
+    line-height: 2;
+  }
+  @media (max-width: 750px){
+    .fl-content {
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+  }
+</style>

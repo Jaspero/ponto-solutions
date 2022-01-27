@@ -1,0 +1,74 @@
+<script>
+  export let data = {
+    list: undefined
+  };
+</script>
+
+{#if data.list}
+  <ul class="dl">
+    {#each data.list as item}
+      <li class="dl-item">
+        <div class="dl-container">
+          <img class="dl-image" src={item.image} alt="">
+          <span class="dl-title">{item.title}</span>
+          <span class="dl-description">{item.description}</span>
+        </div>
+      </li>
+    {/each}
+  </ul>
+{/if}
+
+<style>
+  .dl {
+    background: var(--c-dark);
+    color: var(--c-light);
+    padding: 0;
+    list-style: none;
+  }
+  .dl-item {
+    padding: 1rem;
+  }
+  .dl-item:hover {
+    background: var(--c-cyan);
+    color: var(--c-darker);
+  }
+  .dl-container {
+    max-width: 70rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+  .dl-image {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-right: 2rem;
+  }
+  .dl-title {
+    font-family: var(--f-title);
+    font-size: var(--s-xl);
+    flex: 0 1 18ch;
+  }
+  .dl-description {
+    font-size: var(--s-m);
+    flex: 0 1 32ch;
+  }
+  @media (max-width: 750px) {
+    .dl-container {
+      flex-wrap: wrap;
+    }
+    .dl-image {
+      width: 4rem;
+      height: 4rem;
+    }
+    .dl-title {
+      flex: 1 0;
+    }
+    .dl-description {
+      padding: 1rem 0 1rem 6rem;
+      width: 100%;
+      flex: unset;
+    }
+  }
+</style>
