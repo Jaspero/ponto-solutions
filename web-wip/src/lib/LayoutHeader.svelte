@@ -39,27 +39,27 @@
 </header>
 
 <nav class="h-nav" class:active={menuOpened} on:mousemove={handleMousemove}>
-  <a class="h-nav-item active" href="/">
+  <a class="h-nav-item active" href="/" on:click={() => menuOpened = false}>
     <span class="h-nav-item-text">01. Introduction</span>
     <img class="h-nav-item-img" src="images/menu-hover/1.png" alt="" style="left: calc({m.x}px - 5rem); top: calc({m.y}px - 2.5rem); background: red;">
   </a>
-  <a class="h-nav-item" href="/industries">
+  <a class="h-nav-item" href="/industries" on:click={() => menuOpened = false}>
     <span class="h-nav-item-text">02. Industries</span>
     <img class="h-nav-item-img" src="images/menu-hover/2.png" alt="" style="left: calc({m.x}px - 5rem); top: calc({m.y}px - 2.5rem); background: green;">
   </a>
-  <a class="h-nav-item" href="/select-clients">
+  <a class="h-nav-item" href="/select-clients" on:click={() => menuOpened = false}>
     <span class="h-nav-item-text">03. Select Clients</span>
     <img class="h-nav-item-img" src="images/menu-hover/3.png" alt="" style="left: calc({m.x}px - 5rem); top: calc({m.y}px - 2.5rem); background: blue;">
   </a>
-  <a class="h-nav-item" href="/specialties">
+  <a class="h-nav-item" href="/specialties" on:click={() => menuOpened = false}>
     <span class="h-nav-item-text">04. Specialties</span>
     <img class="h-nav-item-img" src="images/menu-hover/4.png" alt="" style="left: calc({m.x}px - 5rem); top: calc({m.y}px - 2.5rem); background: cyan;">
   </a>
-  <a class="h-nav-item" href="/news">
+  <a class="h-nav-item" href="/news" on:click={() => menuOpened = false}>
     <span class="h-nav-item-text">05. News</span>
     <img class="h-nav-item-img" src="images/menu-hover/5.png" alt="" style="left: calc({m.x}px - 5rem); top: calc({m.y}px - 2.5rem); background: crimson;">
   </a>
-  <a class="h-nav-item" href="/contact">
+  <a class="h-nav-item" href="/contact" on:click={() => menuOpened = false}>
     <span class="h-nav-item-text">06. Contact</span>
     <img class="h-nav-item-img" src="images/menu-hover/6.png" alt="" style="left: calc({m.x}px - 5rem); top: calc({m.y}px - 2.5rem); background: white;">
   </a>
