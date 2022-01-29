@@ -101,7 +101,7 @@
       {
         image: 'images/menu-hover/4.png',
         name: 'Project 4'
-      },
+      }
     ]
   }
 
