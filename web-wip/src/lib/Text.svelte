@@ -1,6 +1,6 @@
 <script>
 	export let data = {
-		theme: 'accent',
+		theme: 'accent', // {'dark' || 'light' || 'accent'}
 		title: 'SECURITY SYSTEM UNIFICATION',
 		titleWidth: 'auto',
     subtitle: 'An expert team of system engineers and programming prowess',

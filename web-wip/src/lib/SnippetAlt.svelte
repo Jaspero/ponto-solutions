@@ -1,5 +1,6 @@
 <script>
 	export let data = {
+		theme: 'dark', // {'dark' || 'light' || 'accent'}
 		title: undefined,
 		subtitle: undefined,
 		content: undefined
