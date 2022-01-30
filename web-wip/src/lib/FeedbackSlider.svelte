@@ -49,7 +49,7 @@
   .fs {
     background: var(--bg);
 		color: var(--fg);
-    padding: 10rem 1rem;
+    padding: 8rem 1rem 4rem;
   }
   .fs-header {
     display: flex;

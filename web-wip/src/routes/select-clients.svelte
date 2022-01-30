@@ -3,6 +3,7 @@
 	import Text from "$lib/Text.svelte";
 	import Snippet from "$lib/Snippet.svelte";
 	import FeedbackSlider from "$lib/FeedbackSlider.svelte";
+	import Divider from "$lib/Divider.svelte";
 
 	let heroTitleData = {
 		theme: 'light',
@@ -59,6 +60,10 @@
 			}
 		]
 	}
+
+	let dividerData = {
+		theme: 'dark'
+	}
 </script>
 
 <HeroTitle data={heroTitleData}/>
@@ -70,3 +75,5 @@
 <Snippet data={snippetData2}/>
 
 <FeedbackSlider data={feedbackSliderData}/>
+
+<Divider data={dividerData}/>

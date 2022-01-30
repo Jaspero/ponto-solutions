@@ -2,6 +2,8 @@
   import HeroTitle from "$lib/HeroTitle.svelte";
 	import Text from "$lib/Text.svelte";
 	import SnippetAlt from "$lib/SnippetAlt.svelte";
+	import Gallery from "$lib/Gallery.svelte";
+	import Divider from "$lib/Divider.svelte";
 
 	let heroTitleData = {
 		theme: 'dark',
@@ -31,6 +33,24 @@
 		button: 'Expand',
 		content: `<h1>title</h1><p>paragraph</p>`
 	}
+
+	let galleryData = {
+		title: 'Products We Admire',
+		images: [
+			'images/menu-hover/1.png',
+			'images/menu-hover/2.png',
+			'images/menu-hover/3.png',
+			'images/menu-hover/4.png',
+			'images/menu-hover/4.png',
+			'images/menu-hover/3.png',
+			'images/menu-hover/2.png',
+			'images/menu-hover/1.png'
+		]
+	}
+
+	let dividerData = {
+		theme: 'dark'
+	}
 </script>
 
 <HeroTitle data={heroTitleData}/>
@@ -40,3 +60,7 @@
 <SnippetAlt data={snippetAltData1}/>
 
 <SnippetAlt data={snippetAltData2}/>
+
+<Gallery data={galleryData}/>
+
+<Divider data={dividerData}/>
