@@ -1,14 +1,24 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Block} from '@jaspero/fb-page-builder';
 import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
 import {IMAGE_DEFINITION} from '../utils';
 
 interface Options extends CommonOptions {
+  title?: string;
+  message?: string;
   contacts?: Array<{
     label?: string;
     url?: string;
     text?: string;
+  }>;
+  links?: Array<{
+    link?: string;
+    label?: string;
+  }>;
+  socials: Array<{
+    image?: string;
+    url?: string;
   }>;
 }
 
@@ -17,14 +27,27 @@ interface Options extends CommonOptions {
   icon: 'bubble_chart',
   module: ['settings'],
   previewValue: {
-    title: 'Industry Experts',
-    description: 'An expert team of system engineers and programming prowess. An expert team of system engineers and programming prowess.',
-    link: '/',
-    linkLabel: 'Find out more',
-    videoCover: '/assets/images/pb-placeholders/449x603.png',
-    videoSrc: 'https://www.youtube.com/embed/tgbNymZ7vqY',
-    videoWidth: 1200,
-    videoHeight: 700,
+    title: `Let's talk Security`,
+    message: `Clarity Security Systems Unification Specialists are an elite firm of security system specialists. We design, engineer, install and program access control, video surveillance, intrusion detection and network and wireless systems for enterprise, commercial and residential clients.`,
+    contacts: [
+      {
+        label: 'Call us:',
+        url: 'tel:3143483365',
+        text: '(314)348-3365'
+      },
+      {
+        label: 'Sales:',
+        url: 'tel:3143483365',
+        text: '(314)348-3365'
+      },
+      {
+        label: 'Support Portal:',
+        url: '/',
+        text: 'Click Here'
+      }
+    ],
+    links: [],
+    socials: [],
     ...COMMON_OPTIONS.default
   },
   form: {
@@ -34,34 +57,68 @@ interface Options extends CommonOptions {
         icon: 'article',
         fields: [
           '/title',
-          '/description',
-          '/link',
-          '/linkLabel',
-          '/videoCover',
-          '/videoSrc',
-          '/videoWidth',
-          '/videoHeight'
+          '/message'
         ]
+      },
+      {
+        title: (index: number) => index === undefined ? 'Contact' : `Contact ${index + 1}`,
+        array: '/contacts',
+        fields: ['/label', '/url', '/text'],
+      },
+      {
+        title: (index: number) => index === undefined ? 'Link' : `Link ${index + 1}`,
+        array: '/links',
+        fields: ['/label', '/link'],
+      },
+      {
+        title: (index: number) => index === undefined ? 'Social' : `Social ${index + 1}`,
+        array: '/socials',
+        fields: ['/link', '/image'],
       },
       ...COMMON_OPTIONS.segment
     ],
     schema: {
       properties: {
         title: {type: 'string'},
-        description: {type: 'string'},
-        link: {type: 'string'},
-        linkLabel: {type: 'string'},
-        videoCover: {type: 'string'},
-        videoSrc: {type: 'string'},
-        videoWidth: {type: 'string'},
-        videoHeight: {type: 'string'},
+        message: {type: 'string'},
+        contacts: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              label: {type: 'string'},
+              url: {type: 'string'},
+              text: {type: 'string'},
+            }
+          }
+        },
+        links: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              link: {type: 'string'},
+              label: {type: 'string'}
+            }
+          }
+        },
+        socials: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              link: {type: 'string'},
+              image: {type: 'string'}
+            }
+          }
+        },
         ...COMMON_OPTIONS.properties
       }
     },
     definitions: {
       title: {label: 'Title'},
-      description: {
-        label: 'Description',
+      message: {
+        label: 'Message',
         component: {
           type: 'textarea',
           configuration: {
@@ -69,12 +126,13 @@ interface Options extends CommonOptions {
           }
         }
       },
-      link: {label: 'Link'},
-      linkLabel: {label: 'Link Label'},
-      videoCover: {label: 'Video Cover', ...IMAGE_DEFINITION},
-      videoSrc: {label: 'Video Source (YouTube URL)'},
-      videoWidth: {label: 'Video Width'},
-      videoHeight: {label: 'Video Height'},
+      'contacts/label': {label: 'Label'},
+      'contacts/url': {label: 'URL'},
+      'contacts/text': {label: 'Text'},
+      'links/label': {label: 'Label'},
+      'links/link': {label: 'Link'},
+      'socials/link': {label: 'Link'},
+      'socials/image': {label: 'Image', ...IMAGE_DEFINITION},
       ...COMMON_OPTIONS.definitions
     }
   }

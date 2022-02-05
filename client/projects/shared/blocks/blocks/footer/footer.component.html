@@ -1,1 +1,27 @@
-<p>footer works!</p>
+<footer class="f f-theme-dark">
+  <!-- f-theme-dark: [/, /specialties, /contact]; f-theme-light: [/industries, /select-clients, /news] -->
+  <span class="f-title" *ngIf="data.title">{{ data.title }}</span>
+  <!-- if route: [/, /specialties, /contact]; -->
+  <img class="f-logo" src="/assets/images/c-on-dark.svg" alt="Clarity" />
+  <!-- if route: [/industries, /select-clients, /news] -->
+  <!-- <img class="f-logo" src="images/c-on-light.svg" alt="Clarity"> -->
+  <div class="f-contacts" *ngIf="data.contacts">
+    <span class="f-contact" *ngFor="let contact of data.contacts">
+      <b class="f-contact-label" *ngIf="contact.label">{{ contact.label }}</b>
+      <a class="f-contact-link" *ngIf="contact.url" [href]="contact.url">{{ contact.text || '' }}</a>
+    </span>
+  </div>
+  <nav class="f-nav" *ngIf="data.links">
+    <a class="f-nav-item" *ngFor="let link of data.links" [routerLink]="[link.link]">{{ link.label || '' }}</a>
+  </nav>
+  <p class="f-message" *ngIf="data.message">{{ data.message }}</p>
+  <p class="f-footer">
+    Copyright Clarity SSU | <a class="f-footer-privacy" [routerLink]="['/privacy-policy']">Privacy Policy</a> | Website built with ♥️ by
+    <a class="f-footer-sharq" href="https://sharq.agency/" target="_blank">sharq</a>
+  </p>
+  <div class="f-socials" *ngIf="data.socials">
+    <a *ngFor="let social of data.socials" class="f-social" [href]="social.url" target="_blank">
+      <img class="f-social-img" [src]="social.image" />
+    </a>
+  </div>
+</footer>

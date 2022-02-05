@@ -4,6 +4,7 @@ import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {connectFirestoreEmulator, enableMultiTabIndexedDbPersistence, getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {BrowserModule} from '@angular/platform-browser';
+import {BlocksModule} from '../../../shared/blocks/blocks.module';
 import {environment} from '../environments/environment';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -24,6 +25,7 @@ export function init(injector: Injector) {
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    BlocksModule,
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => {
