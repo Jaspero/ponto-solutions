@@ -31,9 +31,12 @@
     "USER": "User",
     "ROLES": "Roles",
     "LABEL": "Label",
+    "LINK": "Link",
     "SUBMIT": "Submit",
     "DISABLED": "Disabled",
     "ENABLED": "Enabled",
+    "ACTIVE": "Active",
+    "IN_ACTIVE": "In Active",
     "BACK": "Back",
 
     "COUNTRY": "Country",
@@ -48,10 +51,9 @@
     "EMAIL": "Email",
     "DESCRIPTION": "Description",
     "KEY": "Key",
-    "ACTIVE": "Active",
-
+    "GENERAL": "General",
     "YES": "Yes",
-    "GENERAL": "General"
+    "NO": "No"
   },
   "LOGIN": {
     "LOGIN": "Login",
@@ -96,7 +98,8 @@
     "MANAGEMENT": "Management",
     "SYSTEM": "System",
     "RESET_PASSWORD": "Please reset your password",
-    "FILE_MANAGER": "File Manager"
+    "FILE_MANAGER": "File Manager",
+    "WEBSITE": "Website"
   },
   "MODULES": {
     "REMOVE_ITEMS": "Remove {{value}} items",
@@ -217,8 +220,8 @@
       "PROFILE_PHOTO": "Profile Photo"
     },
     "FILTERS": {
-      "START_DATE": "Start Date",
-      "END_DATE": "End Date"
+      "START_DATE": "Created On Start Date",
+      "END_DATE": "Created On End Date"
     }
   },
   "USER_INVITES": {
@@ -246,8 +249,21 @@
       "TITLE": "Change Password",
       "DIALOG_TITLE": "Change Users Password"
     },
-    "USER_STATUS": {
-      "LOADING": "Loading Status..."
+    "USER_ACTIONS": {
+      "LOADING": "Loading Information...",
+      "PROVIDERS": "Providers",
+      "GOOGLE": "Google",
+      "EMAIL_PASSWORD": "Email and Password",
+      "MULTI_FACTORS": "MFA",
+      "PROVIDER_INFORMATION": "Provider Information",
+      "KEY": "Key",
+      "VALUE": "Value",
+      "PHONE": "Phone",
+      "CREATION_TIME": "Creation Time",
+      "LAST_SIGN_IN_TIME": "Last Sign In",
+      "LAST_REFRESH_TIME": "Last Refresh",
+      "REMOVE_PROVIDER_TITLE": "Remove Provider",
+      "REMOVE_PROVIDER_DESCRIPTION": "Are you sure you want to remove this provider? This action can't be reverted."
     },
     "TRIGGER_PASSWORD_RESET": {
       "TITLE": "Send password reset email"
@@ -392,5 +408,11 @@
   },
   "TEMPLATE_EDITOR": {
     "ADD_SEGMENT": "Add Segment"
+  },
+  "WEBSITE": {
+    "LAYOUT": {
+      "LAYOUT": "Layout",
+      "HEADER_NAVIGATION": "Header Navigation"
+    }
   }
 }

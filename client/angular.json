@@ -101,6 +101,7 @@
               "tinymce/plugins/code",
               "tinymce/plugins/table",
               "tinymce/plugins/advlist",
+              "tinymce/plugins/emoticons",
               "@jaspero/utils"
             ],
             "vendorChunk": true,
@@ -256,7 +257,10 @@
             "styles": [
               "projects/web/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "@jaspero/utils"
+            ]
           },
           "configurations": {
             "production": {
