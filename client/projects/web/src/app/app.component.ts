@@ -32,7 +32,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(INITIAL_STATE);
     this.layout = INITIAL_STATE.layout;
     this.loading$ = combineLatest([this.state.routeLoading$])
       .pipe(

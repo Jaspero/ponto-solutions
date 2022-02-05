@@ -1,1 +1,9 @@
-<p>details-list works!</p>
+<ul class="dl" *ngIf="data.list">
+  <li *ngFor="let item of data.list" class="dl-item">
+    <div class="dl-container">
+      <img *ngIf="item.image" class="dl-image" [src]="item.image" />
+      <span *ngIf="item.title" class="dl-title">{{item.title}}</span>
+      <span *ngIf="item.description" class="dl-description">{{item.description}}</span>
+    </div>
+  </li>
+</ul>

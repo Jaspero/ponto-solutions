@@ -13,6 +13,7 @@ import {DetailsListComponent} from './blocks/details-list/details-list.component
 import {FlagImageComponent} from './blocks/flag-image/flag-image.component';
 import {FlagListComponent} from './blocks/flag-list/flag-list.component';
 import {FlagVideoComponent} from './blocks/flag-video/flag-video.component';
+import {FooterComponent} from './blocks/footer/footer.component';
 import {FormComponent} from './blocks/form/form.component';
 import {HeroGalleryComponent} from './blocks/hero-gallery/hero-gallery.component';
 import {MarqueeComponent} from './blocks/marquee/marquee.component';
@@ -31,7 +32,8 @@ const B_COMPONENTS = [
   FlagImageComponent,
   FlagVideoComponent,
   DetailsListComponent,
-  ProjectsSliderComponent
+  ProjectsSliderComponent,
+  FooterComponent
 ];
 
 @NgModule({

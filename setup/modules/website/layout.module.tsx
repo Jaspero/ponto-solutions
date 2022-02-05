@@ -1,3 +1,4 @@
+import {PROCESSED} from '../pages/processed.const';
 import {JSX, Module} from '../shared/module.type';
 
 export const LAYOUT_MODULE: Module = {
@@ -15,6 +16,10 @@ export const LAYOUT_MODULE: Module = {
 					array: '/headerLinks',
 					fields: ['/link', '/label', '/image', '/theme'],
 					columnsDesktop: 12
+				},
+				{
+					type: 'empty',
+					fields: ['/blocks']
 				}
 			]
 		}
@@ -33,7 +38,8 @@ export const LAYOUT_MODULE: Module = {
 						theme: {type: 'string'}
 					}
 				}
-			}
+			},
+			blocks: {type: 'array'},
 		}
 	},
 	definitions: {
@@ -85,6 +91,16 @@ export const LAYOUT_MODULE: Module = {
 					}]
 				}
 			}
-		}
+		},
+		blocks: {
+      component: {
+        type: 'pb-blocks',
+        configuration: {
+          styles: PROCESSED.css,
+          styleUrls: [],
+          intro:  `<p><b>Footer Segments</b><br>Edit segments attached to the footer of the website.</p>`
+        }
+      }
+    }
 	}
 }

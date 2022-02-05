@@ -1,1 +1,17 @@
-<p>projects-slider works!</p>
+<section class="ps">
+  <header class="ps-header">
+    <h1 *ngIf="data.title" class="ps-title">{{data.title}}</h1>
+    <div class="ps-progress">
+      <div class="ps-progress-inner" [style]="scrollStyle"></div>
+    </div>
+    <button *ngIf="data.link && data.linkLabel" class="ps-button" [jmsBlockLink]="data.link">
+			{{data.linkLabel}}
+		</button>
+  </header>
+  <ul *ngIf="data.projects" class="ps-list" (scroll)="scroll($event)">
+		<li *ngFor="let project of data.projects" class="ps-list-item">
+			<img *ngIf="project.image" class="ps-list-image" [src]="project.image" />
+			<span *ngIf="project.name" class="ps-list-name">{{project.name}}</span>
+		</li>
+	</ul>
+</section>

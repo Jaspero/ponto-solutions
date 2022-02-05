@@ -1,1 +1,28 @@
-<p>flag-video works!</p>
+<div class="fv">
+  <div class="fv-background"></div>
+  <div class="fv-content">
+    <div class="fv-main">
+      <h1 *ngIf="data.title" class="fv-title">{{data.title}}</h1>
+      <p *ngIf="data.description" class="fv-description">{{data.description}}</p>
+      <button *ngIf="data.link && data.linkLabel" class="fv-button">{{data.linkLabel}}</button>
+      <div class="fv-spacer"></div>
+    </div>
+    <div *ngIf="data.videoCover" class="fv-media">
+			<img class="fv-cover" [src]="data.videoCover" />
+			<button class="fv-play" aria-label="Play video" (click)="open()">
+				<svg viewBox="0 0 92 92" fill="none" stroke="currentColor">
+					<path d="M39 32.5 60 46 39 59.5v-27Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</button>
+		</div>
+  </div>
+</div>
+
+<div class="fv-dialog" [class.active]="showing">
+  <iframe class="fv-video" title="Video" [width]="data.videoWidth" [height]="data.videoHeight" [src]="data.videoSrc | jpSanitize:'resourceUrl'"></iframe>
+  <button class="fv-close" (click)="close()">
+    <svg viewBox="0 0 92 92" fill="none" stroke="currentColor">
+      <path d="m32 60 28-28M60 60 32 32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>

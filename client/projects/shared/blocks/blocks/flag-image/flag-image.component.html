@@ -1,1 +1,7 @@
-<p>flag-image works!</p>
+<section class="fi" [style.background-image]="'url(' + data.image + ')'">
+  <div class="fi-container">
+    <h1 *ngIf="data.title" class="fi-title">{{data.title}}</h1>
+		<p *ngIf="data.description" class="fi-description">{{data.description}}</p>
+    <button *ngIf="data.link && data.linkLabel" class="fi-button" [jmsBlockLink]="data.link">{{data.linkLabel}}</button>
+  </div>
+</section>

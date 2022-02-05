@@ -7,12 +7,8 @@
 </div>
 
 <header class="h" [ngClass]="theme$ | async">
-  <!-- h-theme-dark: [/, /specialties, /contact]; h-theme-light: [/select-clients,] h-theme-accent: [/industrties, /news] -->
   <a class="h-home" [routerLink]="['/']">
-    <!-- if route: [/, /specialties, /contact]; -->
     <img class="h-logo" [src]="logo$ | async" alt="Clarity" />
-    <!-- if route: [/industries, /select-clients, /news] -->
-    <!-- <img class="h-logo" src="images/clarity-on-light.svg" alt="Clarity"> -->
   </a>
   <span class="h-title">{{(page$ | async).label}}</span>
   <button class="h-toggle" (click)="menuOpened = !menuOpened" aria-label="Toggle navigation">
@@ -36,3 +32,5 @@
 <main>
   <router-outlet></router-outlet>
 </main>
+
+<jms-block-renderer *ngIf="layout.footerBlocks" module="settings" [blocks]="layout.footerBlocks"></jms-block-renderer>

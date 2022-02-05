@@ -5,4 +5,5 @@ export interface Layout {
 		theme: string;
 		image: string;
 	}>;
+	footerBlocks: any[];
 }
