@@ -6,21 +6,33 @@
   </div>
 </div>
 
-<header>
-  <span>Logo</span>
-  <nav>
-    <ul>
-      <li *ngFor="let link of layout.headerLinks" [routerLink]="[link.link]" routerLinkActive="active">
-        {{link.label}}
-      </li>
-    </ul>
-  </nav>
+<header class="h" [ngClass]="theme$ | async">
+  <!-- h-theme-dark: [/, /specialties, /contact]; h-theme-light: [/select-clients,] h-theme-accent: [/industrties, /news] -->
+  <a class="h-home" [routerLink]="['/']">
+    <!-- if route: [/, /specialties, /contact]; -->
+    <img class="h-logo" [src]="logo$ | async" alt="Clarity" />
+    <!-- if route: [/industries, /select-clients, /news] -->
+    <!-- <img class="h-logo" src="images/clarity-on-light.svg" alt="Clarity"> -->
+  </a>
+  <span class="h-title">{{(page$ | async).label}}</span>
+  <button class="h-toggle" (click)="menuOpened = !menuOpened" aria-label="Toggle navigation">
+    <svg class="h-toggle-img" [class.active]="menuOpened" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="19" stroke="#f4f4f4" stroke-width="2" />
+      <path d="M12.929 27.071 27.071 12.93M12.929 12.929 27.071 27.07" stroke="#f4f4f4" stroke-width="2" />
+    </svg>
+    <svg class="h-toggle-img" [class.active]="!menuOpened" viewBox="0 0 40 40" fill="none">
+      <path d="M14 13h24C36.5 8.5 31 1 20 1S1 9 1 20s8 19 19 19 16.5-7.5 18-12H14m16-7H10" stroke="#f4f4f4" stroke-width="2" />
+    </svg>
+  </button>
 </header>
+
+<nav class="h-nav" [class.active]="menuOpened" (mousemove)="mX = $event.clientX; mY = $event.clientY">
+  <a class="h-nav-item" *ngFor="let link of layout.headerLinks" [routerLink]="[link.link]" routerLinkActive="active" (click)="menuOpened = false">
+    <span class="h-nav-item-text">{{ link.label }}</span>
+    <img class="h-nav-item-img" [src]="link.image" [style]="imgStyle" />
+  </a>
+</nav>
 
 <main>
   <router-outlet></router-outlet>
 </main>
-
-<footer>
-  Example Footer
-</footer>
