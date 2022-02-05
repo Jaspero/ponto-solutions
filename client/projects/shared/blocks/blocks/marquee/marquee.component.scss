@@ -1,0 +1,26 @@
+.m {
+	position: relative;
+	background: linear-gradient(30deg, var(--c-darker) 86%, var(--c-dark) 86%);
+	color: var(--c-light);
+	text-shadow: 1px 1px 4px var(--c-darker);
+	font-size: var(--s-xxl);
+	font-family: var(--f-title);
+	line-height: 1.5;
+	white-space: nowrap;
+}
+.m-image {
+	display: block;
+	width: 75vw;
+	height: 45vw;
+	object-fit: cover;
+}
+.m-top {
+	position: absolute;
+	left: 0;
+	bottom: 1.5em;
+}
+.m-bottom {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}

@@ -1,1 +1,1 @@
-export const BASE_TITLE = 'JMS';
+export const BASE_TITLE = 'Clarity SSU';

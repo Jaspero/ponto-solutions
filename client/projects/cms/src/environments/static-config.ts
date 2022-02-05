@@ -4,7 +4,7 @@ import {NavigationItemWithActive} from '../app/shared/interfaces/navigation-item
  * Configuration that is consistent across environments
  */
 export const STATIC_CONFIG = {
-  displayName: 'JMS',
+  displayName: 'Clarity SSU',
   elementSelectorPrefix: 'jms-e-',
   cloudRegion: 'us-central1',
   /**

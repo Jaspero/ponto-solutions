@@ -7,14 +7,18 @@ service firebase.storage {
 
   match /b/{bucket}/o {
 
+    match /public/{files=**} {
+      allow read: if true;
+      allow write: if admin();
+    }
+
     match /generated/{files=**} {
       allow read: if true;
       allow write: if admin();
     }
 
     match /{files} {
-      allow read: if true;
-      allow write: if admin();
+      allow read, write: if admin();
     }
   }
 }

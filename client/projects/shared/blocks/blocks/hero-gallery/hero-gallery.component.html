@@ -1,0 +1,15 @@
+<section class="hg" [class.theme-darker]="data.dark">
+  <div class="hg-container">
+    <div class="hg-content">
+      <h1 *ngIf="data.title" class="hg-title">{{data.title}}</h1>
+			<p *ngIf="data.subtitle" class="hg-subtitle">{{data.subtitle}}</p>
+      <div *ngIf="data.slides?.length" class="hg-toggles">
+				<button *ngFor="let slide of data.slides; index as index" class="hg-toggle" aria-label="Switch to image {{index + 1}}"></button>
+			</div>
+    </div>
+    <div class="hg-images" *ngIf="data.slides">
+			<!-- TODO: Connect Slider #1 -->
+			<img class="hg-image" [src]="data.slides[0].image" [alt]="data.slides[0].alt" />
+		</div>
+  </div>
+</section>
