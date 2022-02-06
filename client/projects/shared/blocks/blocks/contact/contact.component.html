@@ -1,0 +1,32 @@
+<section class="c">
+	<div class="c-container">
+		<div class="c-1">
+			<p class="c-title">GENERAL INQUIRIES</p>
+			<div *ngFor="let inquiry of tempData.inquiries" class="c-group">
+				<strong class="c-label">{{inquiry.label}}</strong>
+				<a class="c-link" [href]="inquiry.value">{{inquiry.value}}</a>
+			</div>
+		</div>
+		<div class="c-1">
+			<p class="c-title">EXISTING CLIENTS</p>
+			<div class="c-group">
+				<strong class="c-label">For all existing clients who need support please email</strong>
+				<a class="c-link" href="mailto:Support@ClaritySU.com">Support@ClaritySU.com</a>
+			</div>
+			<div class="c-group">
+				<strong class="c-label">If you have a platinum support membership login to your portal here</strong>
+				<a class="c-button" href="">Login</a>
+			</div>
+		</div>
+		<div class="c-2">
+			<p class="c-title">GENERAL DIRECTORY</p>
+			<div class="c-grid">
+				<div class="c-group" *ngFor="let directory of tempData.directories">
+					<span class="c-name">{{directory.name}}</span>
+					<span class="c-dept">{{directory.title}}</span>
+					<a class="c-link" [href]="directory.value">{{directory.value}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

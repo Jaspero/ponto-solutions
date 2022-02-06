@@ -3,7 +3,7 @@
     <div class="hg-content">
       <h1 *ngIf="data.title" class="hg-title">{{data.title}}</h1>
 			<p *ngIf="data.subtitle" class="hg-subtitle">{{data.subtitle}}</p>
-      <div *ngIf="data.slides?.length" class="hg-toggles">
+      <div *ngIf="data.slides?.length > 1" class="hg-toggles">
 				<button *ngFor="let slide of data.slides; index as index" class="hg-toggle" aria-label="Switch to image {{index + 1}}"></button>
 			</div>
     </div>

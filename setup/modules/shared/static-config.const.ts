@@ -1,3 +1,3 @@
 export const STATIC_CONFIG = {
-	webUrl: 'https://jaspero-jms.web.app/'
+	webUrl: 'https://clarity-ssu.web.app/'
 }

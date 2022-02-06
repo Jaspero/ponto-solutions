@@ -8,14 +8,17 @@ import {FormUiRendererModule} from '@shared/modules/form-ui-renderer/form-ui-ren
 import {BlockRendererComponent} from './block-renderer/block-renderer.component';
 import {BannerComponent} from './blocks/banner/banner.component';
 import {CommonBlockComponent} from './blocks/common.block';
+import {ContactComponent} from './blocks/contact/contact.component';
 import {ContentComponent} from './blocks/content/content.component';
 import {DetailsListComponent} from './blocks/details-list/details-list.component';
+import {DividerComponent} from './blocks/divider/divider.component';
 import {FeedbackSliderComponent} from './blocks/feedback-slider/feedback-slider.component';
 import {FlagImageComponent} from './blocks/flag-image/flag-image.component';
 import {FlagListComponent} from './blocks/flag-list/flag-list.component';
 import {FlagVideoComponent} from './blocks/flag-video/flag-video.component';
 import {FooterComponent} from './blocks/footer/footer.component';
 import {FormComponent} from './blocks/form/form.component';
+import {GalleryComponent} from './blocks/gallery/gallery.component';
 import {HeroGalleryComponent} from './blocks/hero-gallery/hero-gallery.component';
 import {HeroTitleComponent} from './blocks/hero-title/hero-title.component';
 import {MarqueeComponent} from './blocks/marquee/marquee.component';
@@ -41,7 +44,10 @@ const B_COMPONENTS = [
   HeroTitleComponent,
   TextComponent,
   SnippetComponent,
-  FeedbackSliderComponent
+  FeedbackSliderComponent,
+  GalleryComponent,
+  DividerComponent,
+  ContactComponent
 ];
 
 @NgModule({
