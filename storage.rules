@@ -17,8 +17,9 @@ service firebase.storage {
       allow write: if admin();
     }
 
-    match /{files} {
-      allow read, write: if admin();
+    match /public/{files=**} {
+      allow read: if true;
+      allow write: if admin();
     }
   }
 }
