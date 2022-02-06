@@ -1,0 +1,18 @@
+<section class="s" [ngClass]="data.theme">
+	<div class="s-container">
+		<div *ngIf="data.image" class="s-aspect">
+			<img class="s-image" [src]="data.image" />
+		</div>
+		<h1 *ngIf="data.title" class="s-title">{{data.title}}</h1>
+		<div *ngIf="data.subtitle || data.content" class="s-description">
+			<p *ngIf="data.subtitle" class="s-subtitle">{{data.subtitle}}</p>
+			<button *ngIf="data.content" class="s-expand" (click)="expanded = !expanded">{{data.button || 'Expand'}}</button>
+		</div>
+		<div *ngIf="data.content" class="s-content" [class.active]="expanded">
+			<div [innerHTML]="data.content | jpSanitize"></div>
+			<div class="s-close-container">
+				<button class="s-close" (click)="expanded = !expanded">Close</button>
+			</div>
+		</div>
+	</div>
+</section>

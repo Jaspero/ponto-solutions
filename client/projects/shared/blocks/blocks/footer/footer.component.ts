@@ -1,8 +1,10 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, OnInit} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
 import {Block} from '@jaspero/fb-page-builder';
+import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
+import {filter} from 'rxjs';
 import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
-import {IMAGE_DEFINITION} from '../utils';
 
 interface Options extends CommonOptions {
   title?: string;
@@ -17,7 +19,7 @@ interface Options extends CommonOptions {
     label?: string;
   }>;
   socials: Array<{
-    image?: string;
+    icon?: string;
     url?: string;
   }>;
 }
@@ -73,7 +75,7 @@ interface Options extends CommonOptions {
       {
         title: (index: number) => index === undefined ? 'Social' : `Social ${index + 1}`,
         array: '/socials',
-        fields: ['/link', '/image'],
+        fields: ['/link', '/icon'],
       },
       ...COMMON_OPTIONS.segment
     ],
@@ -108,7 +110,7 @@ interface Options extends CommonOptions {
             type: 'object',
             properties: {
               link: {type: 'string'},
-              image: {type: 'string'}
+              icon: {type: 'string'}
             }
           }
         },
@@ -132,15 +134,50 @@ interface Options extends CommonOptions {
       'links/label': {label: 'Label'},
       'links/link': {label: 'Link'},
       'socials/link': {label: 'Link'},
-      'socials/image': {label: 'Image', ...IMAGE_DEFINITION},
+      'socials/icon': {
+        label: 'Icon (SVG)',
+        component: {
+          type: 'textarea',
+          configuration: {
+            rows: 5
+          }
+        }
+      },
       ...COMMON_OPTIONS.definitions
     }
   }
 })
+@UntilDestroy()
 @Component({
   selector: 'jms-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterComponent extends CommonBlockComponent<Options> {}
+export class FooterComponent extends CommonBlockComponent<Options> implements OnInit {
+  constructor(
+    public cdr: ChangeDetectorRef,
+    public el: ElementRef,
+    private router: Router
+  ) {
+    super(cdr, el);
+  }
+
+  @HostBinding('class.light')
+  light: boolean;
+
+  ngOnInit() {
+
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        untilDestroyed(this)
+      )
+      .subscribe(() => {
+        this.light = document.querySelector('main').classList.contains('light');
+        this.cdr.markForCheck();
+      })
+
+    this.light = document.querySelector('main').classList.contains('light');
+  }
+}

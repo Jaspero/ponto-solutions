@@ -1,0 +1,16 @@
+<section class="fs" [ngClass]="data.theme">
+  <header class="fs-header">
+    <h1 *ngIf="data.title" class="fs-title">{{data.title}}</h1>
+    <div class="fs-progress">
+      <div class="fs-progress-inner" [style]="scrollStyle"></div>
+    </div>
+  </header>
+  <ul *ngIf="data.feedbacks" class="fs-list" (scroll)="scroll($event)">
+		<li *ngFor="let feedback of data.feedbacks" class="fs-list-item">
+			<blockquote *ngIf="feedback.content" class="fs-list-content">{{feedback.content}}</blockquote>
+			<img *ngIf="feedback.image" class="fs-list-image" [src]="feedback.image" />
+			<span *ngIf="feedback.name" class="fs-list-name">{{feedback.name}}</span>
+			<span *ngIf="feedback.title" class="fs-list-title">{{feedback.title}}</span>
+		</li>
+	</ul>
+</section>

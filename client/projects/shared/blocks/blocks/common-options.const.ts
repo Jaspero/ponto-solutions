@@ -19,31 +19,31 @@ export const COMMON_OPTIONS: {
     additionalStyle: {type: 'string'}
   },
   segment: [
-    {
-      type: 'accordion',
-      title: 'Settings',
-      icon: 'settings',
-      configuration: [
-        {
-          title: 'PB.FORM.BLOCKS.SHARED.STANDARD_OPTIONS',
-          fields: [
-            '/box',
-            '/size',
-            '/verticalAlignment',
-            '/background',
-            '/contained'
-          ]
-        },
-        {
-          title: 'PB.FORM.BLOCKS.SHARED.ADVANCED_OPTIONS',
-          fields: [
-            '/addedClasses',
-            '/elementId',
-            '/additionalStyle'
-          ]
-        },
-      ]
-    }
+    // {
+    //   type: 'accordion',
+    //   title: 'Settings',
+    //   icon: 'settings',
+    //   configuration: [
+    //     {
+    //       title: 'PB.FORM.BLOCKS.SHARED.STANDARD_OPTIONS',
+    //       fields: [
+    //         '/box',
+    //         '/size',
+    //         '/verticalAlignment',
+    //         '/background',
+    //         '/contained'
+    //       ]
+    //     },
+    //     {
+    //       title: 'PB.FORM.BLOCKS.SHARED.ADVANCED_OPTIONS',
+    //       fields: [
+    //         '/addedClasses',
+    //         '/elementId',
+    //         '/additionalStyle'
+    //       ]
+    //     },
+    //   ]
+    // }
   ],
   definitions: {
     size: {

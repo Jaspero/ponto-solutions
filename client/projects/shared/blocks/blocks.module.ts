@@ -10,14 +10,18 @@ import {BannerComponent} from './blocks/banner/banner.component';
 import {CommonBlockComponent} from './blocks/common.block';
 import {ContentComponent} from './blocks/content/content.component';
 import {DetailsListComponent} from './blocks/details-list/details-list.component';
+import {FeedbackSliderComponent} from './blocks/feedback-slider/feedback-slider.component';
 import {FlagImageComponent} from './blocks/flag-image/flag-image.component';
 import {FlagListComponent} from './blocks/flag-list/flag-list.component';
 import {FlagVideoComponent} from './blocks/flag-video/flag-video.component';
 import {FooterComponent} from './blocks/footer/footer.component';
 import {FormComponent} from './blocks/form/form.component';
 import {HeroGalleryComponent} from './blocks/hero-gallery/hero-gallery.component';
+import {HeroTitleComponent} from './blocks/hero-title/hero-title.component';
 import {MarqueeComponent} from './blocks/marquee/marquee.component';
 import {ProjectsSliderComponent} from './blocks/projects-slider/projects-slider.component';
+import {SnippetComponent} from './blocks/snippet/snippet.component';
+import {TextComponent} from './blocks/text/text.component';
 import {BlockLinkDirective} from './directives/block-link/block-link.directive';
 
 const B_COMPONENTS = [
@@ -33,7 +37,11 @@ const B_COMPONENTS = [
   FlagVideoComponent,
   DetailsListComponent,
   ProjectsSliderComponent,
-  FooterComponent
+  FooterComponent,
+  HeroTitleComponent,
+  TextComponent,
+  SnippetComponent,
+  FeedbackSliderComponent
 ];
 
 @NgModule({

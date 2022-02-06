@@ -1,0 +1,4 @@
+<section class="t" [ngClass]="data.theme">
+	<h1 *ngIf="data.title" class="t-title" [style.max-width]="data.titleWidth">{{data.title}}</h1>
+	<p *ngIf="data.subtitle" class="t-subtitle" [style.max-width]="data.subtitleWidth">{{data.subtitle}}</p>
+</section>

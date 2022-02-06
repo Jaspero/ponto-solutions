@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   page$: Observable<{label: string; theme: string;}>;
   theme$: Observable<string>;
   logo$: Observable<string>;
+  mainTheme$: Observable<string>;
 
   get imgStyle() {
     return `left: calc(${this.mX}px - 5rem); top: calc(${this.mY}px - 2.5rem); background: red;`
@@ -55,8 +56,12 @@ export class AppComponent implements OnInit {
       map(page => `h-theme-${page.theme}`)
     );
 
-    this.logo$ = this.page$.pipe(
-      map(page => `/assets/images/clarity-on-${page.theme === 'dark' ? 'dark' : 'light'}.svg`)
+    this.mainTheme$ = this.page$.pipe(
+      map(page => page.theme === 'dark' ? 'dark' : 'light')
+    )
+
+    this.logo$ = this.mainTheme$.pipe(
+      map(theme => `/assets/images/clarity-on-${theme}.svg`)
     )
   }
 }

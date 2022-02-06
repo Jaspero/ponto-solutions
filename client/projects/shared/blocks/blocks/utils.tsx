@@ -12,7 +12,6 @@ export const IMAGE_DEFINITION = {
 					hidePath: true,
 					hideFolders: true,
 					allowUpload: true,
-					route: '/public',
 					filters: [{
 						value: file => file.contentType.startsWith('image/')
 					}]

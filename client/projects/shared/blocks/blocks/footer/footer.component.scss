@@ -1,13 +1,24 @@
-.f-theme-dark {
+::ng-deep {
+	.f-social svg {
+		display: inline-block;
+		width: 2.25rem;
+		height: 2rem;
+		fill: var(--f-social);
+	}
+}
+
+:host {
 	--f-fg: var(--c-light);
 	--f-bg: var(--c-darker);
 	--f-social: #ffffff;
 }
-.f-theme-light {
-	--f-fg: var(--c-darker);
+
+:host(.light) {
+  --f-fg: var(--c-darker);
 	--f-bg: var(--c-light);
 	--f-social: #4ca4f8;
 }
+
 .f {
 	padding: 1rem;
 	color: var(--f-fg);
@@ -89,12 +100,6 @@
 .f-social {
 	display: inline-flex;
 	padding: .25rem;
-}
-.f-social-img {
-	display: inline-block;
-	width: 2.25rem;
-	height: 2rem;
-	fill: var(--f-social);
 }
 @media (max-width: 750px) {
 	.f-contacts {
