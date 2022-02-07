@@ -21,12 +21,21 @@
   background-color: rgba(255,255,255,.15);
 }
 
+.mat-button {
+  color: var(--primary-primary);
+}
+
 .mat-icon-button {
   color: var(--primary-primary);
 }
 
-.mat-button {
-  color: var(--primary-primary);
+.mat-stroked-button:not(.mat-button-disabled) {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.mat-button-disabled {
+  background-color: rgba(255,255,255,.12) !important;
+  color: rgba(255,255,255,.24) !important;
 }
 
 
@@ -50,6 +59,14 @@
   color: var(--primary-tertiary);
 }
 
+.mat-form-field-infix {
+  color: var(--primary-primary);
+}
+
+.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+  color: rgba(255,255,255,0.16);
+}
+
 // 'mat-form-field-has-hint' custom class for extra white space after hint
 .mat-form-field-has-hint {
   margin-bottom: 1.25em;
@@ -68,6 +85,20 @@
 // 'mat-form-field-large' custom class for larger form fields
 .mat-form-field.mat-form-field-large .mat-form-field-infix {
   width: 240px;
+}
+
+.mat-input-element {
+  color: var(--primary-primary) !important;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px var(--panel-theme) inset;
+  -webkit-text-fill-color: var(--panel-primary);
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow:0 0 0 50px var(--panel-theme) inset;
+  -webkit-text-fill-color: var(--panel-primary);
 }
 
 .mat-select {
@@ -160,6 +191,15 @@
   &:hover {
     background-color: var(--primary-theme) !important;
   }
+}
+
+
+
+/* Table
+ *============================================================================*/
+
+.mat-tab-label {
+  color: var(--primary-primary);
 }
 
 
@@ -319,6 +359,15 @@ tr.mat-row.mat-row {
 
 
 
+/* List
+ *============================================================================*/
+
+.mat-list-item {
+  color: var(--primary-primary) !important;
+}
+
+
+
 /* Card
  *============================================================================*/
 
@@ -333,7 +382,9 @@ tr.mat-row.mat-row {
   background: var(--panel-theme);
   color: var(--panel-primary);
 }
-
+.mat-card>.mat-card-actions:last-child {
+  margin-bottom: 0 !important;
+}
 .mat-card-header.mat-card-header {
   margin-top: -16px !important;
   margin-right: -16px;
@@ -369,18 +420,21 @@ tr.mat-row.mat-row {
 /* Dialog
  *============================================================================*/
 
+.mat-dialog-container {
+  background-color: var(--panel-theme);
+  color: var(--panel-primary);
+}
+
 .mat-dialog-title.mat-dialog-title {
   margin: -24px -24px 24px;
   padding: 24px;
-  border-bottom: 1px solid var(--tertiary);
+  border-bottom: 1px solid var(--panel-tertiary);
 }
-
-.mat-dialog-content.mat-dialog-content {}
 
 .mat-dialog-actions.mat-dialog-actions {
   margin: 24px -24px -24px;
   padding: 16px 24px;
-  border-top: 1px solid var(--tertiary);
+  border-top: 1px solid var(--panel-tertiary);
 }
 
 

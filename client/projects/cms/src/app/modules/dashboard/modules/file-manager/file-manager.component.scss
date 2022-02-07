@@ -2,12 +2,19 @@
 
 $borderRadius: 4px;
 
+.mat-toolbar {
+  background-color: var(--sidebar-theme);
+}
+
 .path {
   width: 100%;
 }
 
-.folder {
+.mat-button.mat-primary.mat-button-disabled, .mat-button.mat-accent.mat-button-disabled, .mat-button.mat-warn.mat-button-disabled, .mat-button.mat-button-disabled.mat-button-disabled, .mat-icon-button.mat-primary.mat-button-disabled, .mat-icon-button.mat-accent.mat-button-disabled, .mat-icon-button.mat-warn.mat-button-disabled, .mat-icon-button.mat-button-disabled.mat-button-disabled, .mat-stroked-button.mat-primary.mat-button-disabled, .mat-stroked-button.mat-accent.mat-button-disabled, .mat-stroked-button.mat-warn.mat-button-disabled, .mat-stroked-button.mat-button-disabled.mat-button-disabled {
+  color: rgba(255,255,255,.3);
+}
 
+.folder {
   background: var(--backdrop-theme);
   border-color: var(--primary-theme);
   border-radius: $borderRadius;
@@ -26,7 +33,6 @@ $borderRadius: 4px;
 }
 
 .file {
-
   overflow: hidden;
   border-radius: $borderRadius;
 
@@ -76,7 +82,7 @@ $borderRadius: 4px;
   }
 
   &-bar {
-    background: var(--backdrop-theme);
+    background: var(--panel-theme);
     border-color: var(--primary-theme);
     border-radius: $borderRadius;
   }
