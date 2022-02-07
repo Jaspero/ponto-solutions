@@ -20,7 +20,7 @@ interface Options extends CommonOptions {
   icon: 'thumb_up_off_alt',
   previewValue: {
     title: 'See what others say about us.',
-    theme: 'theme-dark',
+    theme: 'theme-light',
     feedbacks: [{
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in.',
       image: '/assets/images/pb-placeholders/160x160.png',
@@ -74,7 +74,6 @@ interface Options extends CommonOptions {
           configuration: {
             dataSet: [
               {name: 'Light', value: 'theme-light'},
-              {name: 'Dark', value: 'theme-dark'},
               {name: 'Accent', value: 'theme-accent'},
             ]
           }
