@@ -1,3 +1,7 @@
+.mat-toolbar {
+  background-color: var(--sidebar-theme);
+}
+
 .jms-instance-single-loading {
   position: absolute;
   top: 0;
@@ -22,9 +26,12 @@
    * Page Builder Overrides
    */
   .pb {
-    .pb-intro {
-      background: white;
+    &-intro {
+      background: var(--panel-theme);
       border-radius: 4px;
+    }
+    &-preview {
+      background: var(--panel-theme) !important;
     }
   }
 
