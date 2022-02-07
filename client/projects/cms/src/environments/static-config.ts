@@ -41,12 +41,12 @@ export const STATIC_CONFIG = {
             type: 'link',
             value: '/m/pages'
           },
-          {
-            icon: 'list_alt',
-            label: 'MODULES.FORMS',
-            type: 'link',
-            value: '/m/forms'
-          },
+          // {
+          //   icon: 'list_alt',
+          //   label: 'MODULES.FORMS',
+          //   type: 'link',
+          //   value: '/m/forms'
+          // },
         ]
       },
       {
@@ -63,18 +63,18 @@ export const STATIC_CONFIG = {
             type: 'link',
             value: '/m/roles'
           },
-          {
-           icon: 'email',
-           label: 'MODULES.AUTOMATIC_EMAILS',
-           type: 'link',
-           value: '/m/automatic-emails'
-          },
-          {
-            icon: 'send',
-            label: 'MODULES.SENT_EMAILS',
-            type: 'link',
-            value: '/m/sent-emails'
-          }
+          // {
+          //  icon: 'email',
+          //  label: 'MODULES.AUTOMATIC_EMAILS',
+          //  type: 'link',
+          //  value: '/m/automatic-emails'
+          // },
+          // {
+          //   icon: 'send',
+          //   label: 'MODULES.SENT_EMAILS',
+          //   type: 'link',
+          //   value: '/m/sent-emails'
+          // }
         ],
         icon: 'account_box',
         label: 'LAYOUT.MANAGEMENT',

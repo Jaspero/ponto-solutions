@@ -11,14 +11,13 @@
       </mat-card-header>
 
       <mat-card-content>
-        <p>Welcome to JMS.</p>
-        <p>To learn more, visit https://github.com/Jaspero/jms</p>
-        <ul>
-          <li><a href="">Sample link</a></li>
-          <li><a href="">Sample link</a></li>
-          <li><a href="">Sample link</a></li>
-          <li><a href="">Sample link</a></li>
-          <li><a href="">Sample link</a></li>
+        <p>Welcome to Clarity Security.</p>
+        <p>You can visit the website here: <a href="https://clarity-ssu.web.app/">https://clarity-ssu.web.app/</a></p>
+        <p class="m-t-s"><b>Quick Actions</b></p>
+        <ul class="m-t-s">
+          <li><a [routerLink]="['/m/pages/overview']">View Pages</a></li>
+          <li><a [routerLink]="['/m/pages/single/new']">Create A Page</a></li>
+          <li><a [routerLink]="['/m/settings/single/layout']">Configure Layout</a></li>
         </ul>
       </mat-card-content>
     </mat-card>
