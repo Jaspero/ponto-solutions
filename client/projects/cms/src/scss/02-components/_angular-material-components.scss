@@ -21,6 +21,14 @@
   background-color: rgba(255,255,255,.15);
 }
 
+.mat-icon-button {
+  color: var(--primary-primary);
+}
+
+.mat-button {
+  color: var(--primary-primary);
+}
+
 
 
 /* Form field
@@ -28,6 +36,18 @@
 
 .mat-form-field {
   font-size: 13px;
+}
+
+.mat-form-field-label {
+  color: var(--primary-primary);
+
+  &-wrapper {
+    color: var(--primary-secondary);
+  }
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: var(--primary-tertiary);
 }
 
 // 'mat-form-field-has-hint' custom class for extra white space after hint
@@ -50,6 +70,14 @@
   width: 240px;
 }
 
+.mat-select {
+  color: var(--primary-primary);
+
+  &-value {
+    color: var(--primary-primary);
+  }
+}
+
 
 
 /* Radio
@@ -61,6 +89,15 @@
 
 .mat-radio-container {
   margin: 0 4px;
+}
+
+
+
+/* Mat Autocomplete
+ *============================================================================*/
+
+.mat-autocomplete-panel {
+  background-color: var(--panel-theme);
 }
 
 
@@ -91,6 +128,11 @@
 /* Toolbar
  *============================================================================*/
 
+.mat-toolbar {
+  background-color: var(--panel-theme);
+  color: var(--panel-primary);
+}
+
 .mat-toolbar-row.mat-toolbar-row,
 .mat-toolbar-single-row.mat-toolbar-single-row {
   height: 64px;
@@ -103,6 +145,20 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+}
+
+
+
+/* Mat Tree Node
+ *============================================================================*/
+
+.block-navigation mat-tree-node {
+  background-color: var(--sidebar-theme);
+  color: var(--sidebar-primary);
+
+  &:hover {
+    background-color: var(--primary-theme) !important;
   }
 }
 
@@ -123,6 +179,10 @@ tr.mat-row.mat-row {
   height: unset;
 }
 
+.mat-checkbox-frame {
+  border-color: white;
+}
+
 .mat-cell.mat-cell,
 .mat-footer-cell.mat-footer-cell,
 .mat-header-cell.mat-header-cell {
@@ -131,13 +191,15 @@ tr.mat-row.mat-row {
   font-size: 12px;
   overflow: hidden;
   vertical-align: middle;
+  border-color: var(--primary-tertiary);
+  color: var(--primary-primary);
 
   // row checkbox
   &.cta-column {
     padding: 0;
     width: 48px;
     min-width: 48px;
-    box-shadow: inset -1px 0 0 0 var(--tertiary);
+    box-shadow: inset -1px 0 0 0 var(--primary-tertiary);
     text-align: center;
   }
 
@@ -146,7 +208,7 @@ tr.mat-row.mat-row {
     padding: 0;
     width: 48px;
     min-width: 48px;
-    box-shadow: inset 1px 0 0 0 var(--tertiary);
+    box-shadow: inset 1px 0 0 0 var(--primary-tertiary);
   }
 }
 

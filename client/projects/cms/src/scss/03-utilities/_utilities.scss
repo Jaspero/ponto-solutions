@@ -73,8 +73,8 @@
  *============================================================================*/
 
 .bg {
-  background-color: var(--theme);
-  color: var(--primary);
+  background-color: var(--sidebar-theme);
+  color: var(--sidebar-primary);
 }
 @each $group-name, $group in $colors-themes {
   .bg-#{$group-name} {
@@ -192,11 +192,11 @@
 /* Borders
  *============================================================================*/
 
-.b-a { border       : 1px solid var(--tertiary); }
-.b-t { border-top   : 1px solid var(--tertiary); }
-.b-r { border-right : 1px solid var(--tertiary); }
-.b-b { border-bottom: 1px solid var(--tertiary); }
-.b-l { border-left  : 1px solid var(--tertiary); }
+.b-a { border       : 1px solid var(--primary-tertiary); }
+.b-t { border-top   : 1px solid var(--primary-tertiary); }
+.b-r { border-right : 1px solid var(--primary-tertiary); }
+.b-b { border-bottom: 1px solid var(--primary-tertiary); }
+.b-l { border-left  : 1px solid var(--primary-tertiary); }
 
 
 

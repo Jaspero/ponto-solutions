@@ -19,6 +19,7 @@
         *ngIf="!data.autoSave"
         type="submit"
         mat-flat-button
+        color="primary"
         [disabled]="formBuilderComponent?.form.invalid"
         [fDisable]="data.authorization"
         [jpLoadClick]="save(data)">
