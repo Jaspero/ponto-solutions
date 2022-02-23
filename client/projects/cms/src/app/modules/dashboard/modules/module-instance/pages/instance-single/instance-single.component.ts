@@ -1,5 +1,4 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {
   Definitions,
@@ -10,14 +9,14 @@ import {
 } from '@jaspero/form-builder';
 import {random, safeEval} from '@jaspero/utils';
 import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
+import {notify} from '@shared/utils/notify.operator';
 import {JSONSchema7} from 'json-schema';
 import {interval, Observable, of, Subject, Subscription} from 'rxjs';
 import {debounceTime, map, switchMap, tap} from 'rxjs/operators';
 import {ViewState} from '../../../../../../shared/enums/view-state.enum';
 import {ModuleAuthorization} from '../../../../../../shared/interfaces/module-authorization.interface';
 import {DbService} from '../../../../../../shared/services/db/db.service';
-import {StateService} from '../../../../../../shared/services/state/state.service';
-import {notify} from '@shared/utils/notify.operator';
+import {UtilService} from '../../../../../../shared/services/util/util.service';
 import {queue} from '../../../../../../shared/utils/queue.operator';
 import {InstanceOverviewContextService} from '../../services/instance-overview-context.service';
 
@@ -55,11 +54,10 @@ export class InstanceSingleComponent implements OnInit {
   constructor(
     private dbService: DbService,
     private router: Router,
-    private state: StateService,
     private activatedRoute: ActivatedRoute,
-    private fb: FormBuilder,
     private ioc: InstanceOverviewContextService,
-    private formCtx: FormBuilderContextService
+    private formCtx: FormBuilderContextService,
+    private util: UtilService
   ) {
   }
 
@@ -90,6 +88,9 @@ export class InstanceSingleComponent implements OnInit {
 
         return this.activatedRoute.params.pipe(
           switchMap(params => {
+
+            this.util.docId = params.id;
+
             if (params.id === 'new') {
               this.currentState = ViewState.New;
               this.formState = State.Create;
@@ -211,9 +212,7 @@ export class InstanceSingleComponent implements OnInit {
           `${instance.module.docIdPrefix}-${random.string(instance.module.docIdSize)}`);
 
       const actions: any[] = [
-        switchMap(() => {
-          let data = this.formBuilderComponent.form.getRawValue();
-
+        switchMap((data: any) => {
           if (this.currentState === ViewState.Edit && instance.formatOnEdit) {
             data = instance.formatOnEdit(data);
           } else if (this.currentState === ViewState.New && instance.formatOnCreate) {

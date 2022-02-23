@@ -7,6 +7,11 @@ export const STATIC_CONFIG = {
   displayName: 'Clarity SSU',
   elementSelectorPrefix: 'jms-e-',
   cloudRegion: 'us-central1',
+  login: {
+    email: true,
+    google: true,
+    facebook: true
+  },
   /**
    * We use this to redirect all unauthenticated users
    */
