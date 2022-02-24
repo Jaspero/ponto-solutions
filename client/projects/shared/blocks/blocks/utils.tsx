@@ -9,9 +9,9 @@ export const IMAGE_DEFINITION = {
 				label: 'FILE_MANAGER.TITLE',
 				component: JSX(<jms-e-file-manager-select/>),
 				configuration: {
-					hidePath: true,
-					hideFolders: true,
-					allowUpload: true,
+					hidePath: false,
+					hideFolders: false,
+					allowUpload: false,
 					filters: [{
 						value: file => file.contentType.startsWith('image/')
 					}]

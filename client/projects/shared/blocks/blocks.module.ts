@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router';
 import {InlineEditorModule} from '@jaspero/fb-page-builder';
 import {LoadClickModule, SanitizeModule} from '@jaspero/ng-helpers';
 import {FormUiRendererModule} from '@shared/modules/form-ui-renderer/form-ui-renderer.module';
+import {SwiperModule} from 'swiper/angular';
 import {BlockRendererComponent} from './block-renderer/block-renderer.component';
 import {BannerComponent} from './blocks/banner/banner.component';
 import {CommonBlockComponent} from './blocks/common.block';
@@ -69,7 +70,9 @@ const B_COMPONENTS = [
     InlineEditorModule,
 
     SanitizeModule,
-    LoadClickModule
+    LoadClickModule,
+
+    SwiperModule
   ]
 })
 export class BlocksModule { }

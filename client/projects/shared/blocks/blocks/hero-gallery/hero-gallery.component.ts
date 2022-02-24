@@ -1,5 +1,6 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, ViewChild} from '@angular/core';
 import {Block} from '@jaspero/fb-page-builder';
+import {SwiperComponent} from 'swiper/angular';
 import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
 import {IMAGE_DEFINITION} from '../utils';
@@ -77,4 +78,28 @@ interface Options extends CommonOptions {
   styleUrls: ['./hero-gallery.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeroGalleryComponent extends CommonBlockComponent<Options> {}
+export class HeroGalleryComponent extends CommonBlockComponent<Options> {
+  constructor(
+    public cdr: ChangeDetectorRef,
+    public el: ElementRef,
+    private ngZone: NgZone
+  ) {
+    super(cdr, el);
+  }
+
+
+  @ViewChild(SwiperComponent, { static: true }) swiper: SwiperComponent;
+
+  activeSlide = 0;
+
+  onSwipe(e) {
+    this.ngZone.run(() =>
+      this.activeSlide = e[0].realIndex
+    )
+  }
+
+  sl(index: number) {
+    this.swiper.swiperRef.slideTo(index, 300);
+    this.activeSlide = index;
+  }
+}

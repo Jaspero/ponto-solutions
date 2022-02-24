@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, HostListener} from '@angular/core';
 import {Block} from '@jaspero/fb-page-builder';
 import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
@@ -57,4 +57,15 @@ interface Options extends CommonOptions {
   styleUrls: ['./marquee.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MarqueeComponent extends CommonBlockComponent<Options> {}
+export class MarqueeComponent extends CommonBlockComponent<Options> {
+
+  transition: number;
+
+  @HostListener('window:scroll')
+  scroll() {
+    const {scrollY, innerHeight} = window;
+    const {offsetTop, offsetHeight} = this.el.nativeElement;
+    this.transition = (scrollY - (((offsetHeight + innerHeight) / 2) + (offsetTop - innerHeight))) * -.5;
+  }
+
+}
