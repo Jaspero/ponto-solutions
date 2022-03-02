@@ -1,4 +1,4 @@
 <section class="ht theme" [ngClass]="data.theme">
 	<h1 *ngIf="data.title" class="ht-title">{{data.title}}</h1>
-	<img *ngIf="data.image" class="ht-image" [src]="data.image" />
+	<img *ngIf="data.image" class="ht-image" [src]="data.image | jpSanitize:'url'" />
 </section>

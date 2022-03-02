@@ -10,7 +10,7 @@
     <div class="hg-images">
       <swiper (transitionEnd)="onSwipe($event)">
         <ng-template swiperSlide *ngFor="let slide of data.slides">
-          <img class="hg-image" [src]="slide.image" [alt]="slide.alt" />
+          <img class="hg-image" [src]="slide.image | jpSanitize:'url'" [alt]="slide.alt" />
         </ng-template>
       </swiper>
     </div>

@@ -1,5 +1,5 @@
 <section class="m">
-	<img *ngIf="data.image" class="m-image" [src]="data.image" [alt]="data.imageAlt" />
+	<img *ngIf="data.image" class="m-image" [src]="data.image | jpSanitize:'url'" [alt]="data.imageAlt" />
 	<span class="m-top" [style.transform]="'translateX(' + transition + 'px)'">{{data.top}}</span>
 	<span class="m-bottom" [style.transform]="'translateX(' + -transition + 'px)'">{{data.bottom}}</span>
 </section>

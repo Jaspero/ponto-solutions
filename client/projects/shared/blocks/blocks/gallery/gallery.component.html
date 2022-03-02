@@ -2,7 +2,7 @@
 	<h1 *ngIf="data.title" class="g-title">{{data.title}}</h1>
 	<div *ngIf="data.gallery" class="g-images">
 		<div *ngFor="let item of data.gallery" class="g-aspect">
-			<img class="g-image" [src]="item.image" [alt]="item.alt" />
+			<img class="g-image" [src]="item.image | jpSanitize:'url'" [alt]="item.alt" />
 		</div>
 	</div>
 </section>

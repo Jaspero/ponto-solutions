@@ -10,7 +10,7 @@
   </header>
   <ul *ngIf="data.projects" class="ps-list" (scroll)="scroll($event)">
 		<li *ngFor="let project of data.projects" class="ps-list-item">
-			<img *ngIf="project.image" class="ps-list-image" [src]="project.image" />
+			<img *ngIf="project.image" class="ps-list-image" [src]="project.image | jpSanitize:'url'" />
 			<span *ngIf="project.name" class="ps-list-name">{{project.name}}</span>
 		</li>
 	</ul>

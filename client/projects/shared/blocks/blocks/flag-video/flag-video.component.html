@@ -8,7 +8,7 @@
       <div class="fv-spacer"></div>
     </div>
     <div *ngIf="data.videoCover" class="fv-media">
-			<img class="fv-cover" [src]="data.videoCover" />
+			<img class="fv-cover" [src]="data.videoCover | jpSanitize:'url'" />
 			<button class="fv-play" aria-label="Play video" (click)="open()">
 				<svg viewBox="0 0 92 92" fill="none" stroke="currentColor">
 					<path d="M39 32.5 60 46 39 59.5v-27Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>

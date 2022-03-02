@@ -8,7 +8,7 @@
   <ul *ngIf="data.feedbacks" class="fs-list" (scroll)="scroll($event)">
 		<li *ngFor="let feedback of data.feedbacks" class="fs-list-item">
 			<blockquote *ngIf="feedback.content" class="fs-list-content">{{feedback.content}}</blockquote>
-			<img *ngIf="feedback.image" class="fs-list-image" [src]="feedback.image" />
+			<img *ngIf="feedback.image" class="fs-list-image" [src]="feedback.image | jpSanitize:'url'" />
 			<span *ngIf="feedback.name" class="fs-list-name">{{feedback.name}}</span>
 			<span *ngIf="feedback.title" class="fs-list-title">{{feedback.title}}</span>
 		</li>
