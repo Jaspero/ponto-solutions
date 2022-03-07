@@ -4,7 +4,24 @@ import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
 
 interface Options extends CommonOptions {
+  titleOne?: string;
+  titleTwo?: string;
+  loginDescription?: string;
+  description?: string;
+  email?: string;
+  loginLink?: string;
+  loginLabel?: string;
+  directionsTitle?: string;
   theme?: string;
+  directories?: Array<{
+    name?: string;
+    title?: string;
+    value?: string;
+  }>;
+  inquiries?: Array<{
+    label?: string;
+    value?: string;
+  }>
 }
 
 @Block({
@@ -12,6 +29,8 @@ interface Options extends CommonOptions {
   icon: 'minimize',
   previewValue: {
     theme: 'theme-dark',
+    directories: [],
+    inquiries: [],
     ...COMMON_OPTIONS.default
   },
   form: {
@@ -20,18 +39,101 @@ interface Options extends CommonOptions {
         title: 'Content',
         icon: 'article',
         fields: [
+          '/titleOne',
+          '/titleTwo',
+          '/description',
+          '/email',
           '/theme'
         ]
+      },
+      {
+        title: 'Login',
+        icon: 'article',
+        fields: [
+          '/loginDescription',
+          '/loginLabel',
+          '/loginLink',
+        ]
+      },
+      {
+        title: 'Directories',
+        icon: 'article',
+        fields: [
+          '/directionsTitle'
+        ]
+      },
+      {
+        title: (index: number) => index === undefined ? 'Inquiry' : `Inquiry ${index + 1}`,
+        array: '/inquiries',
+        fields: ['/label', '/value'],
+      },
+      {
+        title: (index: number) => index === undefined ? 'Director' : `Director ${index + 1}`,
+        array: '/directories',
+        fields: ['/name', '/title', '/value'],
       },
       ...COMMON_OPTIONS.segment
     ],
     schema: {
       properties: {
         theme: {type: 'string'},
+        titleOne: {type: 'string'},
+        titleTwo: {type: 'string'},
+        loginLink: {type: 'string'},
+        loginLabel: {type: 'string'},
+        loginDescription: {type: 'string'},
+        directionsTitle: {type: 'string'},
+        description: {type: 'string'},
+        email: {type: 'string'},
+        inquiries: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              label: {type: 'string'},
+              value: {type: 'string'}
+            }
+          }
+        },
+        directories: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              name: {type: 'string'},
+              title: {type: 'string'},
+              value: {type: 'string'},
+            }
+          }
+        },
         ...COMMON_OPTIONS.properties
       }
     },
     definitions: {
+      titleOne: {label: 'First Title'},
+      titleTwo: {label: 'Second Title'},
+      loginLink: {label: 'Link'},
+      loginLabel: {label: 'Label'},
+      description: {
+        label: 'Description',
+        component: {
+          type: 'textarea',
+          configuration: {
+            rows: 5
+          }
+        }
+      },
+      email: {label: 'Email'},
+      loginDescription: {
+        label: 'Description',
+        component: {
+          type: 'textarea',
+          configuration: {
+            rows: 5
+          }
+        }
+      },
+      directionsTitle: {label: 'Title'},
       theme: {
         label: 'Theme',
         component: {
@@ -44,6 +146,11 @@ interface Options extends CommonOptions {
           }
         }
       },
+      'inquiries/label': {label: 'Name'},
+      'inquiries/value': {label: 'Email'},
+      'directories/name': {label: 'Name'},
+      'directories/title': {label: 'Title'},
+      'directories/value': {label: 'Email'},
       ...COMMON_OPTIONS.definitions
     }
   }

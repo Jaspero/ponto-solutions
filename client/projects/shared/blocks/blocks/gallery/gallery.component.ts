@@ -34,7 +34,7 @@ interface Options extends CommonOptions {
       {
         title: (index: number) => index === undefined ? 'Image' : `Image ${index + 1}`,
         array: '/gallery',
-        fields: ['/image', '/alt'],
+        fields: ['/image', '/alt', '/link'],
       },
       ...COMMON_OPTIONS.segment
     ],
@@ -47,7 +47,8 @@ interface Options extends CommonOptions {
             type: 'object',
             properties: {
               image: {type: 'string'},
-              alt: {type: 'string'}
+              alt: {type: 'string'},
+              link: {type: 'string'}
             }
           }
         },
@@ -58,6 +59,7 @@ interface Options extends CommonOptions {
       title: {label: 'Title'},
       'gallery/image': {label: 'Image', ...IMAGE_DEFINITION},
       'gallery/alt': {label: 'Alt Description'},
+      'gallery/link': {label: 'Link'},
       ...COMMON_OPTIONS.definitions
     }
   }

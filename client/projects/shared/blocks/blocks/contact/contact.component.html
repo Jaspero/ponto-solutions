@@ -1,27 +1,27 @@
 <section class="c">
 	<div class="c-container">
 		<div class="c-1">
-			<p class="c-title">GENERAL INQUIRIES</p>
-			<div *ngFor="let inquiry of tempData.inquiries" class="c-group">
+			<p *ngIf="data.titleOne" class="c-title">{{data.titleOne}}</p>
+			<div *ngFor="let inquiry of data.inquiries" class="c-group">
 				<strong class="c-label">{{inquiry.label}}</strong>
-				<a class="c-link" [href]="inquiry.value">{{inquiry.value}}</a>
+				<a class="c-link" [href]="'mailto:' + inquiry.value">{{inquiry.value}}</a>
 			</div>
 		</div>
 		<div class="c-1">
-			<p class="c-title">EXISTING CLIENTS</p>
+			<p *ngIf="data.titleTwo" class="c-title">{{data.titleTwo}}</p>
 			<div class="c-group">
-				<strong class="c-label">For all existing clients who need support please email</strong>
-				<a class="c-link" href="mailto:Support@ClaritySU.com">Support@ClaritySU.com</a>
+				<strong class="c-label" *ngIf="data.description">{{data.description}}</strong>
+				<a class="c-link" href="mailto:{{data.email}}">{{data.email}}</a>
 			</div>
-			<div class="c-group">
-				<strong class="c-label">If you have a platinum support membership login to your portal here</strong>
-				<a class="c-button" href="">Login</a>
+			<div *ngIf="data.loginLink || data.loginDescription" class="c-group">
+				<strong class="c-label" *ngIf="data.loginDescription">{{data.loginDescription}}</strong>
+				<a *ngIf="data.loginLink" class="c-button" [href]="data.loginLink">{{data.loginLabel}}</a>
 			</div>
 		</div>
 		<div class="c-2">
-			<p class="c-title">GENERAL DIRECTORY</p>
+			<p class="c-title">{{data.directionsTitle}}</p>
 			<div class="c-grid">
-				<div class="c-group" *ngFor="let directory of tempData.directories">
+				<div class="c-group" *ngFor="let directory of data.directories">
 					<span class="c-name">{{directory.name}}</span>
 					<span class="c-dept">{{directory.title}}</span>
 					<a class="c-link" [href]="directory.value">{{directory.value}}</a>

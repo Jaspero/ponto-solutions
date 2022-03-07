@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {Block} from '@jaspero/fb-page-builder';
 import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
@@ -51,7 +51,7 @@ interface Options extends CommonOptions {
       {
         title: (index: number) => index === undefined ? 'Project' : `Project ${index + 1}`,
         array: '/projects',
-        fields: ['/image', '/name'],
+        fields: ['/image', '/name', '/content'],
       },
       ...COMMON_OPTIONS.segment
     ],
@@ -67,6 +67,7 @@ interface Options extends CommonOptions {
             properties: {
               image: {type: 'string'},
               name: {type: 'string'},
+              content: {type: 'string'}
             }
           }
         },
@@ -79,6 +80,12 @@ interface Options extends CommonOptions {
       linkLabel: {label: 'Link Label'},
       'projects/image': {label: 'Image', ...IMAGE_DEFINITION},
       'projects/name': {label: 'Name'},
+      'projects/content': {
+        label: 'Dialog',
+        component: {
+          type: 'tinymce'
+        }
+      },
       ...COMMON_OPTIONS.definitions
     }
   }
@@ -91,6 +98,31 @@ interface Options extends CommonOptions {
 })
 export class ProjectsSliderComponent extends CommonBlockComponent<Options> {
   scrolled = 0;
+  dp: any;
+  dragging = false;
+
+  @ViewChild('psList', {read: ElementRef, static: false})
+  listEl: ElementRef<HTMLUListElement>;
+
+  @HostListener('window:keydown.escape')
+  keyDown() {
+    this.dp = null;
+    this.cdr.markForCheck();
+  }
+
+  @HostListener('window:mouseup')
+  dragStop() {
+    this.dragging = false;
+  }
+
+  @HostListener('window:mousemove', ['$event'])
+  dragMove(event) {
+    if (!this.dragging || (window.innerWidth > 800)) {
+      return;
+    }
+    event.preventDefault();
+    this.listEl.nativeElement.scrollLeft += event.movementX;
+  }
 
   get scrollStyle() {
     return `width: ${this.scrolled}%`;
@@ -99,5 +131,14 @@ export class ProjectsSliderComponent extends CommonBlockComponent<Options> {
   scroll(event) {
     const el = event.srcElement;
     this.scrolled = 100 * el.scrollLeft / (el.scrollWidth - el.clientWidth);
+  }
+
+  openDialog(project) {
+    if (!project.content) {
+      return;
+    }
+
+    this.dp = project;
+    this.cdr.markForCheck();
   }
 }

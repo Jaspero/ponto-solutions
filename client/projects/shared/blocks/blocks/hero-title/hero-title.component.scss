@@ -28,3 +28,8 @@
 	height: 40vw;
 	object-fit: cover;
 }
+@media (max-width: 750px) {
+	.ht-image {
+		height: 80vw;
+	}
+}

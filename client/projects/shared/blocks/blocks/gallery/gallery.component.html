@@ -1,8 +1,8 @@
 <section class="g">
 	<h1 *ngIf="data.title" class="g-title">{{data.title}}</h1>
 	<div *ngIf="data.gallery" class="g-images">
-		<div *ngFor="let item of data.gallery" class="g-aspect">
+		<a *ngFor="let item of data.gallery" class="g-aspect" target="_blank" [href]="item.link">
 			<img class="g-image" [src]="item.image | jpSanitize:'url'" [alt]="item.alt" />
-		</div>
+		</a>
 	</div>
 </section>

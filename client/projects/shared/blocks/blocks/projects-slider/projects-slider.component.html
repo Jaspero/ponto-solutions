@@ -8,10 +8,25 @@
 			{{data.linkLabel}}
 		</button>
   </header>
-  <ul *ngIf="data.projects" class="ps-list" (scroll)="scroll($event)">
-		<li *ngFor="let project of data.projects" class="ps-list-item">
+  <ul #psList *ngIf="data.projects" class="ps-list" (scroll)="scroll($event)" (mousedown)="dragging = true">
+		<li *ngFor="let project of data.projects" class="ps-list-item" (click)="openDialog(project)">
 			<img *ngIf="project.image" class="ps-list-image" [src]="project.image | jpSanitize:'url'" />
 			<span *ngIf="project.name" class="ps-list-name">{{project.name}}</span>
 		</li>
 	</ul>
 </section>
+
+<div class="dialog" *ngIf="dp">
+  <div class="dialog-content">
+    <div class="dialog-content-title">
+      <span>{{dp.name}}</span>
+      <div class="dialog-close" (click)="dp = null">
+        <svg viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="19" stroke="#f4f4f4" stroke-width="2" />
+          <path d="M12.929 27.071 27.071 12.93M12.929 12.929 27.071 27.07" stroke="#f4f4f4" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+    <div class="dialog-content-inner" [innerHTML]="dp.content | jpSanitize:'html'"></div>
+  </div>
+</div>

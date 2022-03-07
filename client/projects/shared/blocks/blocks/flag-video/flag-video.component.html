@@ -7,7 +7,7 @@
       <button *ngIf="data.link && data.linkLabel" class="fv-button">{{data.linkLabel}}</button>
       <div class="fv-spacer"></div>
     </div>
-    <div *ngIf="data.videoCover" class="fv-media">
+    <div *ngIf="data.videoCover || data.videoSrc" class="fv-media">
 			<img class="fv-cover" [src]="data.videoCover | jpSanitize:'url'" />
 			<button class="fv-play" aria-label="Play video" (click)="open()">
 				<svg viewBox="0 0 92 92" fill="none" stroke="currentColor">
