@@ -122,7 +122,7 @@ export class ProjectsSliderComponent extends CommonBlockComponent<Options> {
     }
 
     event.preventDefault();
-    this.listEl.nativeElement.scrollLeft += event.movementX;
+    this.listEl.nativeElement.scrollLeft -= event.movementX;
   }
 
   get scrollStyle() {
