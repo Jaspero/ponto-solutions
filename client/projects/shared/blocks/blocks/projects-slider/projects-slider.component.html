@@ -8,7 +8,7 @@
 			{{data.linkLabel}}
 		</button>
   </header>
-  <ul #psList *ngIf="data.projects" class="ps-list" (scroll)="scroll($event)" (mousedown)="dragging = true">
+  <ul #psList *ngIf="data.projects" class="ps-list" (scroll)="scroll($event)" (mousedown)="startDragging()">
 		<li *ngFor="let project of data.projects" class="ps-list-item" (click)="openDialog(project)">
 			<img *ngIf="project.image" class="ps-list-image" [src]="project.image | jpSanitize:'url'" />
 			<span *ngIf="project.name" class="ps-list-name">{{project.name}}</span>

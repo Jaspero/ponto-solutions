@@ -88,6 +88,8 @@
   font-size: var(--s-xm);
   font-family: var(--f-title);
   margin-top: 0.5em;
+  pointer-events: none;
+  user-select: none;
 }
 .dialog {
   position: fixed;

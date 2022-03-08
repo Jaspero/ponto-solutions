@@ -117,9 +117,10 @@ export class ProjectsSliderComponent extends CommonBlockComponent<Options> {
 
   @HostListener('window:mousemove', ['$event'])
   dragMove(event) {
-    if (!this.dragging || (window.innerWidth > 800)) {
+    if (!this.dragging || (window.innerWidth < 800)) {
       return;
     }
+
     event.preventDefault();
     this.listEl.nativeElement.scrollLeft += event.movementX;
   }
@@ -131,6 +132,10 @@ export class ProjectsSliderComponent extends CommonBlockComponent<Options> {
   scroll(event) {
     const el = event.srcElement;
     this.scrolled = 100 * el.scrollLeft / (el.scrollWidth - el.clientWidth);
+  }
+
+  startDragging() {
+    this.dragging = true;
   }
 
   openDialog(project) {
