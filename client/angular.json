@@ -252,6 +252,7 @@
             "aot": true,
             "assets": [
               "projects/web/src/favicon.ico",
+              "projects/web/src/robots.txt",
               "projects/web/src/assets"
             ],
             "styles": [
