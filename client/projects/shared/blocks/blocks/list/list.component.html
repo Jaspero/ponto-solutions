@@ -1,0 +1,10 @@
+<div class="l">
+  <div class="l-background"></div>
+  <div class="l-content">
+    <ul *ngIf="data.list" class="l-list">
+			<li *ngFor="let item of data.list" class="l-list-item">
+        <a [href]="item.link">{{item.label}}</a>
+      </li>
+		</ul>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.l {
+	position: relative;
+	background: var(--c-dark);
+	padding: 8rem 0;
+	overflow: hidden;
+}
+.l-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--c-darker);
+	transform-origin: left top;
+	transform: skewX(60deg);
+}
+.l-content {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	max-width: 70rem;
+	margin: auto;
+}
+.l-list {
+	flex: 0 1 50%;
+	font-family: var(--f-title);
+	font-size: var(--s-l);
+	list-style: none;
+	padding: 2rem 1rem;
+}
+.l-list-item {
+	line-height: 2;
+
+	a {
+		color: var(--c-lighter);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

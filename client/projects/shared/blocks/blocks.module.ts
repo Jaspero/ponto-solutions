@@ -22,6 +22,7 @@ import {FormComponent} from './blocks/form/form.component';
 import {GalleryComponent} from './blocks/gallery/gallery.component';
 import {HeroGalleryComponent} from './blocks/hero-gallery/hero-gallery.component';
 import {HeroTitleComponent} from './blocks/hero-title/hero-title.component';
+import {ListComponent} from './blocks/list/list.component';
 import {MarqueeComponent} from './blocks/marquee/marquee.component';
 import {ProjectsSliderComponent} from './blocks/projects-slider/projects-slider.component';
 import {SnippetComponent} from './blocks/snippet/snippet.component';
@@ -48,7 +49,8 @@ const B_COMPONENTS = [
   FeedbackSliderComponent,
   GalleryComponent,
   DividerComponent,
-  ContactComponent
+  ContactComponent,
+  ListComponent
 ];
 
 @NgModule({
