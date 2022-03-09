@@ -62,6 +62,16 @@
         overflow: hidden;
       }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@analyzee/core@latest"></script>
+    <script>
+      if (window.location.origin === 'https://clarityssu.com') {
+        window.analyzee = new Analyzee({
+          api: 'DSMS6RY3-NIJQ'
+        });
+      }
+    </script>
+
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
