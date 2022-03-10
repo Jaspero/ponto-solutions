@@ -9,7 +9,7 @@
 			<button *ngIf="data.content" class="s-expand" (click)="expanded = !expanded">{{data.button || 'Expand'}}</button>
 		</div>
 		<div *ngIf="data.content" class="s-content" [class.active]="expanded">
-			<div [innerHTML]="data.content | jpSanitize"></div>
+			<div class="injected-content" [innerHTML]="data.content | jpSanitize"></div>
 			<div class="s-close-container">
 				<button class="s-close" (click)="expanded = !expanded">Close</button>
 			</div>

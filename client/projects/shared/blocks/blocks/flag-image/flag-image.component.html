@@ -1,4 +1,4 @@
-<section class="fi" [style.background-image]="'url(' + data.image + ')'">
+<section class="fi" [style.background-image]="'url(' + data.image + ')'" [style.background-position]="backgroundPosition">
   <div class="fi-container">
     <h1 *ngIf="data.title" class="fi-title">{{data.title}}</h1>
 		<p *ngIf="data.description" class="fi-description">{{data.description}}</p>

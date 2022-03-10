@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Block} from '@jaspero/fb-page-builder';
 import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
@@ -10,6 +10,8 @@ interface Options extends CommonOptions {
   link?: string;
   linkLabel?: string;
   image?: string;
+  backgroundPosition?: string;
+  backgroundPositionMobile?: string;
 }
 
 @Block({
@@ -33,7 +35,14 @@ interface Options extends CommonOptions {
           '/description',
           '/link',
           '/linkLabel',
-          '/image'
+        ]
+      },
+      {
+        title: 'Background',
+        fields: [
+          '/image',
+          '/backgroundPosition',
+          '/backgroundPositionMobile'
         ]
       },
       ...COMMON_OPTIONS.segment
@@ -45,6 +54,8 @@ interface Options extends CommonOptions {
         link: {type: 'string'},
         linkLabel: {type: 'string'},
         image: {type: 'string'},
+        backgroundPosition: {type: 'string'},
+        backgroundPositionMobile: {type: 'string'},
         ...COMMON_OPTIONS.properties
       }
     },
@@ -72,4 +83,11 @@ interface Options extends CommonOptions {
   styleUrls: ['./flag-image.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FlagImageComponent extends CommonBlockComponent<Options> {}
+export class FlagImageComponent extends CommonBlockComponent<Options> implements OnInit {
+
+  backgroundPosition: string;
+
+  ngOnInit() {
+    this.backgroundPosition = (window.innerWidth > 800 ? this.data.backgroundPosition : this.data.backgroundPositionMobile) || '50% 50%'
+  }
+}

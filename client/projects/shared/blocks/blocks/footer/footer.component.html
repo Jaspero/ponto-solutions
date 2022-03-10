@@ -14,12 +14,15 @@
     <a class="f-nav-item" *ngFor="let link of data.links" [routerLink]="[link.link]">{{ link.label || '' }}</a>
   </nav>
   <p class="f-message" *ngIf="data.message">{{ data.message }}</p>
-  <p class="f-footer">
-    Copyright Clarity SSU | <a class="f-footer-privacy" [routerLink]="['/privacy-policy']">Privacy Policy</a> | Website built with <img src="/assets/images/sharq_heart.svg" alt="Sharq Heart"> by
-    <a class="f-footer-sharq" href="https://sharq.agency/" target="_blank">
-      <img src="/assets/images/sharq.svg" alt="Sharq Logo">
-    </a>
-  </p>
+  <div class="f-footer">
+    Copyright Clarity SSU <span>|</span> <a class="f-footer-privacy" [routerLink]="['/privacy-policy']">Privacy Policy</a> <span>|</span> Website built with 
+    <div>
+      <img src="/assets/images/sharq_heart.svg" alt="Sharq Heart"> by
+      <a class="f-footer-sharq" href="https://sharq.agency/" target="_blank">
+        <img src="/assets/images/sharq.svg" alt="Sharq Logo">
+      </a>
+    </div>
+  </div>
   <div class="f-socials" *ngIf="data.socials">
     <a *ngFor="let social of data.socials" class="f-social" [href]="social.url" target="_blank" [innerHTML]="social.icon | jpSanitize"></a>
   </div>

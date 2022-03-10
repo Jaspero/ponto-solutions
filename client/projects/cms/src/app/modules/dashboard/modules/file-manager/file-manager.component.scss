@@ -19,9 +19,11 @@ $borderRadius: 4px;
     &-blue {
 
       border-color: var(--primary-theme);
+      background-color: var(--primary-theme);
       
       .folder-icon {
-        background-color: var(--primary-theme);
+        color: var(--primary-theme);
+        background-color: white;
       }
     }
   }

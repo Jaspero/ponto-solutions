@@ -5,6 +5,7 @@ import {CommonBlockComponent, CommonOptions} from '../common.block';
 
 interface ContentOptions extends CommonOptions {
   content: string;
+  theme: string;
 }
 
 @Block({
@@ -12,6 +13,7 @@ interface ContentOptions extends CommonOptions {
   icon: 'article',
   previewValue: {
     content: '<h1>Custom Title</h1><h2>Custom Subtitle</h2><p>Custom content</p>',
+    theme: 'theme-dark',
     ...COMMON_OPTIONS.defaults
   },
   form: {
@@ -20,6 +22,7 @@ interface ContentOptions extends CommonOptions {
         title: 'Content',
         icon: 'subject',
         fields: [
+          '/theme',
           '/content'
         ],
       },
@@ -27,6 +30,7 @@ interface ContentOptions extends CommonOptions {
     ],
     schema: {
       properties: {
+        theme: {type: 'string'},
         content: {type: 'string'},
         ...COMMON_OPTIONS.properties
       }
@@ -36,6 +40,19 @@ interface ContentOptions extends CommonOptions {
         label: '',
         component: {
           type: 'tinymce'
+        }
+      },
+      theme: {
+        label: 'Theme',
+        component: {
+          type: 'select',
+          configuration: {
+            dataSet: [
+              {name: 'Light', value: 'theme-light'},
+              {name: 'Dark', value: 'theme-dark'},
+              {name: 'Accent', value: 'theme-accent'},
+            ]
+          }
         }
       },
       ...COMMON_OPTIONS.definitions

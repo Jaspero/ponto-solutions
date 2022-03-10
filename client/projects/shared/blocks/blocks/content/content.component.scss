@@ -1,0 +1,15 @@
+.theme-dark {
+	background: var(--c-darker);
+	color: var(--c-lighter);
+}
+.theme-light {
+	background: var(--c-light);
+	color: var(--c-darker);
+}
+.theme-accent {
+	background: var(--c-blue);
+	color: var(--c-lighter);
+}
+.injected-content {
+	padding: 3rem 1rem;
+}
