@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {Block} from '@jaspero/fb-page-builder';
 import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
@@ -103,6 +103,32 @@ interface Options extends CommonOptions {
 })
 export class FeedbackSliderComponent extends CommonBlockComponent<Options> {
   scrolled = 0;
+  dp: any;
+  dragging = false;
+
+  @ViewChild('psList', {read: ElementRef, static: false})
+  listEl: ElementRef<HTMLUListElement>;
+
+  @HostListener('window:keydown.escape')
+  keyDown() {
+    this.dp = null;
+    this.cdr.markForCheck();
+  }
+
+  @HostListener('window:mouseup')
+  dragStop() {
+    this.dragging = false;
+  }
+
+  @HostListener('window:mousemove', ['$event'])
+  dragMove(event) {
+    if (!this.dragging || (window.innerWidth < 800)) {
+      return;
+    }
+
+    event.preventDefault();
+    this.listEl.nativeElement.scrollLeft -= event.movementX;
+  }
 
   get scrollStyle() {
     return `width: ${this.scrolled}%`;
@@ -111,5 +137,18 @@ export class FeedbackSliderComponent extends CommonBlockComponent<Options> {
   scroll(event) {
     const el = event.srcElement;
     this.scrolled = 100 * el.scrollLeft / (el.scrollWidth - el.clientWidth);
+  }
+
+  startDragging() {
+    this.dragging = true;
+  }
+
+  openDialog(project) {
+    if (!project.content) {
+      return;
+    }
+
+    this.dp = project;
+    this.cdr.markForCheck();
   }
 }

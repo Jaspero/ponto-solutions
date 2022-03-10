@@ -5,7 +5,7 @@
       <div class="fs-progress-inner" [style]="scrollStyle"></div>
     </div>
   </header>
-  <ul *ngIf="data.feedbacks" class="fs-list" (scroll)="scroll($event)">
+  <ul #psList *ngIf="data.feedbacks" class="fs-list" (scroll)="scroll($event)" (mousedown)="startDragging()">
 		<li *ngFor="let feedback of data.feedbacks" class="fs-list-item">
 			<blockquote *ngIf="feedback.content" class="fs-list-content">{{feedback.content}}</blockquote>
 			<img *ngIf="feedback.image" class="fs-list-image" [src]="feedback.image | jpSanitize:'url'" />
