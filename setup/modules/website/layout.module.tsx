@@ -76,8 +76,8 @@ export const LAYOUT_MODULE: Module = {
 						label: 'FILE_MANAGER.TITLE',
 						component: JSX(<jms-e-file-manager-select/>),
 						configuration: {
-							hidePath: true,
-							hideFolders: true,
+							hidePath: false,
+							hideFolders: false,
 							allowUpload: true,
 							route: '/public',
 							filters: [{
