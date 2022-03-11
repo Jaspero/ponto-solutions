@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, HostListener, OnDestroy, ViewChild} from '@angular/core';
 import {Block} from '@jaspero/fb-page-builder';
 import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
@@ -96,7 +96,7 @@ interface Options extends CommonOptions {
   styleUrls: ['./projects-slider.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProjectsSliderComponent extends CommonBlockComponent<Options> {
+export class ProjectsSliderComponent extends CommonBlockComponent<Options> implements OnDestroy {
   scrolled = 0;
   dp: any;
   dragging = false;
@@ -107,6 +107,7 @@ export class ProjectsSliderComponent extends CommonBlockComponent<Options> {
   @HostListener('window:keydown.escape')
   keyDown() {
     this.dp = null;
+    document.body.classList.remove('o-y-hidden');
     this.cdr.markForCheck();
   }
 
@@ -129,6 +130,10 @@ export class ProjectsSliderComponent extends CommonBlockComponent<Options> {
     return `width: ${this.scrolled}%`;
   }
 
+  ngOnDestroy() {
+    document.body.classList.remove('o-y-hidden');
+  }
+
   scroll(event) {
     const el = event.srcElement;
     this.scrolled = 100 * el.scrollLeft / (el.scrollWidth - el.clientWidth);
@@ -142,6 +147,8 @@ export class ProjectsSliderComponent extends CommonBlockComponent<Options> {
     if (!project.content) {
       return;
     }
+
+    document.body.classList.add('o-y-hidden');
 
     this.dp = project;
     this.cdr.markForCheck();

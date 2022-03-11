@@ -43,12 +43,12 @@ export class AppComponent implements OnInit {
       .pipe(
         filter(it => it instanceof NavigationEnd),
         startWith({url: location.pathname}),
-        map((it: NavigationEnd) => 
-          this.layout.headerLinks.find(link => link.link === it.url) || {
-            label: 'Page Not Found',
+        map((it: NavigationEnd) => {
+          return this.layout.headerLinks.find(link => link.link === it.url) || {
+            label: this.state.current?.title || '',
             theme: 'light'
           }
-        ),
+        }),
         shareReplay(1)
       );
     

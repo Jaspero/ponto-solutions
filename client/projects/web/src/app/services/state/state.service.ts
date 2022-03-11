@@ -24,6 +24,7 @@ export class StateService {
   }
 
   routeLoading$: Observable<boolean>;
+  current: any;
 
   private firstPage = false;
 

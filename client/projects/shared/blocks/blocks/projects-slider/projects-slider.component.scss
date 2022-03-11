@@ -99,6 +99,7 @@
   top: 0;
   left: 0;
   z-index: 1000;
+  overflow-y: scroll;
 
   &-close {
     width: 50px;
@@ -125,7 +126,10 @@
 
     &-inner {
       color: white;
-      font-size: 1.5rem;
+
+      @media (min-width: 750px) {
+        font-size: 1.5rem;
+      }
     }
   }
 }

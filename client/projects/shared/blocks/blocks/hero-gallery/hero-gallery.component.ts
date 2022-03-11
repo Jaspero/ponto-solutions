@@ -40,7 +40,12 @@ interface Options extends CommonOptions {
       {
         title: (index: number) => index === undefined ? 'Slide' : `Slide ${index + 1}`,
         array: '/slides',
-        fields: ['/image', '/alt'],
+        fields: [
+          '/image',
+          '/alt',
+          '/backgroundPosition',
+          '/backgroundPositionMobile'
+        ],
       },
       ...COMMON_OPTIONS.segment
     ],
@@ -55,7 +60,9 @@ interface Options extends CommonOptions {
             type: 'object',
             properties: {
               image: {type: 'string'},
-              alt: {type: 'string'}
+              alt: {type: 'string'},
+              backgroundPosition: {type: 'string'},
+              backgroundPositionMobile: {type: 'string'},
             }
           }
         },
@@ -91,6 +98,10 @@ export class HeroGalleryComponent extends CommonBlockComponent<Options> {
   @ViewChild(SwiperComponent, { static: true }) swiper: SwiperComponent;
 
   activeSlide = 0;
+
+  get desktop() {
+    return window.innerWidth > 800;
+  }
 
   onSwipe(e) {
     this.ngZone.run(() =>
