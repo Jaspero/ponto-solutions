@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, OnDestroy, Renderer2} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Block} from '@jaspero/fb-page-builder';
 import {COMMON_OPTIONS} from '../common-options.const';
 import {CommonBlockComponent, CommonOptions} from '../common.block';
@@ -88,4 +88,17 @@ interface Options extends CommonOptions {
 })
 export class SnippetComponent extends CommonBlockComponent<Options> {
   expanded = false;
+
+  scrollY: number;
+
+  toggle() {
+    this.scrollY = window.scrollY;
+    this.expanded = !this.expanded;
+  }
+
+  collapse() {
+    this.expanded = false;
+    this.cdr.markForCheck();
+    window.scrollTo({top: this.scrollY});
+  }
 }
