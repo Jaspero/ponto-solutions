@@ -115,12 +115,17 @@
     }
 
     &-title {
+
+      > span {
+        width: 80%;
+      }
+
       color: white;
       display: flex;
       justify-content: space-between;
       font-size: 3rem;
       font-weight: bold;
-      align-items: center;
+      align-items: top;
       margin-bottom: 2rem;
     }
 
@@ -148,6 +153,14 @@
   }
   .ps-list-image {
     height: 60vw;
-    width: 60vw;
+    width: 80vw;
+  }
+
+  .dialog-title span {
+    width: 50%;
+  }
+
+  .dialog-close {
+    padding-top: 10px;
   }
 }

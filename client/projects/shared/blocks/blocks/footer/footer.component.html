@@ -24,6 +24,6 @@
     </div>
   </div>
   <div class="f-socials" *ngIf="data.socials">
-    <a *ngFor="let social of data.socials" class="f-social" [href]="social.url" target="_blank" [innerHTML]="social.icon | jpSanitize"></a>
+    <a *ngFor="let social of data.socials" class="f-social" [href]="social.link" target="_blank" [innerHTML]="social.icon | jpSanitize"></a>
   </div>
 </footer>

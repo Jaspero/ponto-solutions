@@ -20,7 +20,7 @@ interface Options extends CommonOptions {
   }>;
   socials: Array<{
     icon?: string;
-    url?: string;
+    link?: string;
   }>;
 }
 
@@ -167,7 +167,6 @@ export class FooterComponent extends CommonBlockComponent<Options> implements On
   light: boolean;
 
   ngOnInit() {
-
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
