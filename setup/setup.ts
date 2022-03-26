@@ -5,12 +5,12 @@ let environment: any = process.argv[2] || 'd';
 
 if (environment === 'd') {
   environment = {
-    projectId: 'clarity-ssu'
+    projectId: 'ponto-solutions'
   };
 } else {
   environment = {
     credential: admin.credential.cert('./serviceAccountKey.json'),
-    databaseURL: 'https://clarity-ssu.firebaseio.com'
+    databaseURL: 'https://ponto-solutions.firebaseio.com'
   };
 }
 

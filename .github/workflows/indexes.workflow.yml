@@ -11,7 +11,7 @@ on:
 jobs:
   deploy:
     env: 
-      project: 'clarity-ssu'
+      project: 'ponto-solutions'
     name: Deploy
     runs-on: ubuntu-latest
     steps:

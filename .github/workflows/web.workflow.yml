@@ -11,7 +11,7 @@ on:
 jobs:
   deploy:
     env: 
-      project: 'clarity-ssu'
+      project: 'ponto-solutions'
       # Release Branch
       # Only when the workflow is being run on this branch
       # will it create the build branch

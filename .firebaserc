@@ -1,17 +1,17 @@
 {
   "targets": {
-    "clarity-ssu": {
+    "ponto-solutions": {
       "hosting": {
         "cms": [
-          "clarity-ssu-cms"
+          "ponto-solutions-cms"
         ],
         "web": [
-          "clarity-ssu"
+          "ponto-solutions"
         ]
       }
     }
   },
   "projects": {
-    "default": "clarity-ssu"
+    "default": "ponto-solutions"
   }
 }

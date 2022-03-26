@@ -3,12 +3,12 @@
  */
 export const ENV_CONFIG = {
   firebase: {
-    "projectId": "clarity-ssu",
-    "appId": "1:457345361492:web:3a81a948fcaa947a96efc1",
-    "storageBucket": "clarity-ssu.appspot.com",
-    "apiKey": "AIzaSyA4oJd3pQvyu74oCITGUJZam8dwZBQSPk8",
-    "authDomain": "clarity-ssu.firebaseapp.com",
-    "messagingSenderId": "457345361492",
-    "measurementId": "G-2NJ0RNE0QB"
+    apiKey: "AIzaSyAiOlWr1JVpUV9xPQYpqmrPzJNNat9kC2U",
+    authDomain: "ponto-solutions.firebaseapp.com",
+    projectId: "ponto-solutions",
+    storageBucket: "ponto-solutions.appspot.com",
+    messagingSenderId: "1001655498734",
+    appId: "1:1001655498734:web:aa2218bfa71f161e8cc0ff",
+    measurementId: "G-0H0FK36S3T"
   }
 };

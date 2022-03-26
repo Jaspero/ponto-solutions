@@ -38,7 +38,7 @@ jobs:
           npm run firebase -- deploy --only hosting:web -m "${{ github.run_id }}" --token $FIREBASE_TOKEN
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          FIREBASE_PROJECT: 'clarity-ssu'
+          FIREBASE_PROJECT: 'ponto-solutions'
       - name: Commit
         run: |
           git config --local user.email "action@github.com"

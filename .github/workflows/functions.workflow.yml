@@ -12,7 +12,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     env: 
-      project: 'clarity-ssu'
+      project: 'ponto-solutions'
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2

@@ -1,5 +1,5 @@
 # Clarity SSU
-This is the full source code for the [Clarity SSU webapp](https://clarity-ssu.web.app/).
+This is the full source code for the [Clarity SSU webapp](https://ponto-solutions.web.app/).
 The app is built in [Angular](https://angular.io/) and the database and hosting is on [Firebase](https://firebase.google.com/). 
 
 Content management is done through [JMS](https://github.com/Jaspero/jms) our open source content management system. 
