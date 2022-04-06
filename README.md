@@ -1,5 +1,5 @@
-# Clarity SSU
-This is the full source code for the [Clarity SSU webapp](https://ponto-solutions.web.app/).
+# Ponto Solutions
+This is the full source code for the [Ponto Solutions webapp](https://ponto-solutions.web.app/).
 The app is built in [Angular](https://angular.io/) and the database and hosting is on [Firebase](https://firebase.google.com/). 
 
 Content management is done through [JMS](https://github.com/Jaspero/jms) our open source content management system. 
@@ -12,4 +12,4 @@ We don't have the required manpower and experties to build frameworks and tools 
 
 ## License 
 
-The source code is publised under MIT © [Jaspero Ltd](mailto:info@jaspero.co) and all media assets are property of Clarity SSU.
+The source code is publised under MIT © [Jaspero Ltd](mailto:info@jaspero.co) and all media assets are property of Ponto Solutions.
