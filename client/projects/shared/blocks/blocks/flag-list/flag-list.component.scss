@@ -1,6 +1,6 @@
 .fl {
 	position: relative;
-	background: var(--c-dark);
+	background: var(--c-lighter);
 	padding: 8rem 0;
 	overflow: hidden;
 }
@@ -10,7 +10,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: var(--c-darker);
+	background: var(--c-light);
 	transform-origin: left top;
 	transform: skewX(60deg);
 }
@@ -27,13 +27,11 @@
 	padding: 2rem 1rem;
 }
 .fl-title {
-	color: var(--c-light);
 	font-family: var(--f-title);
 	font-size: var(--s-xl);
 	font-weight: normal;
 }
 .fl-description {
-	color: var(--c-light);
 	font-size: var(--s-m);
 	margin: 0 0 2.5em;
 	max-width: 34ch;
@@ -69,7 +67,6 @@
 	flex: 0 1 50%;
 	font-family: var(--f-title);
 	font-size: var(--s-l);
-	color: var(--c-lighter);
 	list-style: none;
 	padding: 2rem 1rem;
 }

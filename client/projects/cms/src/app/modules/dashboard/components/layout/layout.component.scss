@@ -116,7 +116,7 @@
 
   &.active {
     background: var(--sidebar-tertiary);
-    border-left: 3px solid var(--primary-primary);
+    border-left: 3px solid var(--primary-theme);
   }
 
   &:hover {
@@ -275,7 +275,7 @@
 
     &.active {
       background: var(--sidebar-tertiary);
-      border-left: 3px solid var(--primary-primary);
+      border-left: 3px solid var(--primary-theme);
     }
 
     &:hover {

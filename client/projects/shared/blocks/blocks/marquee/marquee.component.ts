@@ -11,14 +11,14 @@ interface Options extends CommonOptions {
 }
 
 @Block({
-  label: 'Maruquee',
+  label: 'Marquee',
   icon: 'streetview',
   previewValue: {
     top: 'Simplify Your Systems',
     bottom: 'Understand Your Infrastructure',
     image: '/assets/images/pb-placeholders/1200x800.png',
     ...COMMON_OPTIONS.default
-  },  
+  },
   form: {
     segments: [
       {
