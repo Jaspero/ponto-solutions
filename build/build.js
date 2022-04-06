@@ -6,9 +6,9 @@ const renderMeta = require('./src/render-meta');
 const siteMap = require('./src/site-map');
 const URL = 'https://ponto-solutions.web.app/';
 const BASE_PATH = join(__dirname, '..', 'public/web');
-const BASE_TITLE = 'JMS';
+const BASE_TITLE = 'Ponto Solutions';
 const DELIMITER = '-';
-const BASE_URL = 'https://firebasestorage.googleapis.com/v0/b/jaspero-automated-tests.appspot.com/o/';
+const BASE_URL = 'https://firebasestorage.googleapis.com/v0/b/ponto-solutions.appspot.com/o/';
 const PAGES = [
   {
     url: '',
