@@ -26,8 +26,7 @@
 }
 
 .mat-button-disabled {
-  background-color: rgba(255,255,255,.12) !important;
-  color: rgba(255,255,255,.24) !important;
+  opacity: .5;
 }
 
 
@@ -391,7 +390,7 @@ tr.mat-row.mat-row {
  *============================================================================*/
 
 .mat-list-item {
-  color: var(--primary-primary) !important;
+  color: var(--panel-primary) !important;
 }
 
 

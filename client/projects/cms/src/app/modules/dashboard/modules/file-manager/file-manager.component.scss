@@ -3,7 +3,7 @@
 $borderRadius: 4px;
 
 .mat-toolbar {
-  background-color: var(--sidebar-theme);
+  background-color: var(--primary-theme);
 }
 
 .path {
@@ -17,9 +17,7 @@ $borderRadius: 4px;
 .folder {
   &-color {
     &-blue {
-
       border-color: var(--primary-theme);
-      background-color: var(--primary-theme);
       
       .folder-icon {
         color: var(--primary-theme);
