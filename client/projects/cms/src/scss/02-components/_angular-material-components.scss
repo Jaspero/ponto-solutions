@@ -21,14 +21,6 @@
   background-color: rgba(255,255,255,.15);
 }
 
-.mat-button {
-  color: var(--primary-primary);
-}
-
-.mat-icon-button {
-  color: var(--primary-primary);
-}
-
 .mat-stroked-button:not(.mat-button-disabled) {
   border-color: rgba(255, 255, 255, 0.12);
 }
@@ -71,19 +63,19 @@
 }
 
 .mat-form-field-label {
-  color: var(--primary-primary);
+  color: var(--panel-primary);
 
   &-wrapper {
-    color: var(--primary-secondary);
+    color: var(--panel-secondary);
   }
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: var(--primary-tertiary);
+  color: var(--panel-tertiary);
 }
 
 .mat-form-field-infix {
-  color: var(--primary-primary);
+  color: var(--panel-primary);
 }
 
 .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
@@ -111,7 +103,7 @@
 }
 
 .mat-input-element {
-  color: var(--primary-primary) !important;
+  color: var(--panel-primary) !important;
 }
 
 input:-webkit-autofill {
@@ -125,10 +117,10 @@ input:-webkit-autofill:focus {
 }
 
 .mat-select {
-  color: var(--primary-primary);
+  color: var(--panel-primary);
 
   &-value {
-    color: var(--primary-primary);
+    color: var(--panel-primary);
   }
 }
 
@@ -230,15 +222,6 @@ input:-webkit-autofill:focus {
 /* Table
  *============================================================================*/
 
-.mat-tab-label {
-  color: var(--primary-primary);
-}
-
-
-
-/* Table
- *============================================================================*/
-
 .mat-table.mat-table {
   width: 100%;
   background: transparent;
@@ -265,8 +248,6 @@ tr.mat-row.mat-row {
   font-size: 12px;
   overflow: hidden;
   vertical-align: middle;
-  border-color: var(--primary-tertiary);
-  color: var(--primary-primary);
 
   // row checkbox
   &.cta-column {
