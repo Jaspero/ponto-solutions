@@ -146,10 +146,10 @@ $loaderColor: #4a8df8;
   margin: auto 0;
 }
 .h-nav-item:hover {
-  color: var(--c-cyan);
+  color: var(--c-blue);
 }
 .h-nav-item.active {
-  color: var(--c-cyan);
+  color: var(--c-blue);
 }
 .h-nav-item.active::after {
   content: '';
@@ -158,7 +158,7 @@ $loaderColor: #4a8df8;
   right: calc(100% + 1rem);
   bottom: .5em;
   height: .06em;
-  background: var(--c-cyan);
+  background: var(--c-blue);
   pointer-events: none;
 }
 .h-nav-item-text {

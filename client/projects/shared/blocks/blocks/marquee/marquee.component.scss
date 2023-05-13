@@ -19,11 +19,13 @@
   position: absolute;
   left: 0;
   bottom: 1.5em;
+  color: var(--c-blue);
 }
 .m-bottom {
   position: absolute;
   right: 0;
   bottom: 0;
+  color: var(--c-blue);
 }
 @media (max-width: 750px) {
   .m-image {
