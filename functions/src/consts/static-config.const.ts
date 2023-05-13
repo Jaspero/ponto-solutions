@@ -9,5 +9,5 @@ export const STATIC_CONFIG: {
   url: string;
 } = {
   cloudRegion: 'us-central1',
-  url: 'https://ponto-solutions.web.app/'
+  url: 'https://pontosolutions.com/'
 };

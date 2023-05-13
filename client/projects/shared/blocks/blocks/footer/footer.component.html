@@ -1,8 +1,8 @@
 <footer class="f">
   <span class="f-title" *ngIf="data.title">{{ data.title }}</span>
-  <img *ngIf="light; else dark" class="f-logo" src="/assets/images/c-on-light.svg" alt="Clarity" />
+  <img *ngIf="light; else dark" class="f-logo" src="/assets/images/c-on-light.svg" alt="Ponto Solutions" />
   <ng-template #dark>
-    <img class="f-logo" src="/assets/images/c-on-dark.svg" alt="Clarity" />
+    <img class="f-logo" src="/assets/images/c-on-dark.svg" alt="Ponto Solutions" />
   </ng-template>
   <div class="f-contacts" *ngIf="data.contacts">
     <span class="f-contact" *ngFor="let contact of data.contacts">

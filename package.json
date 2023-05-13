@@ -40,12 +40,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaspero/jms"
+    "url": "https://github.com/jaspero/ponto-solutions"
   },
   "bugs": {
-    "url": "https://github.com/jaspero/jms/issues"
+    "url": "https://github.com/jaspero/ponto-solutions/issues"
   },
-  "homepage": "https://ponto-solutions.web.com",
+  "homepage": "https://pontosolutions.com",
   "devDependencies": {
     "concurrently": "7.0.0"
   }

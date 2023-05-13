@@ -30,7 +30,7 @@ interface Options extends CommonOptions {
   module: ['settings'],
   previewValue: {
     title: `Let's talk Security`,
-    message: `Clarity Security Systems Unification Specialists are an elite firm of security system specialists. We design, engineer, install and program access control, video surveillance, intrusion detection and network and wireless systems for enterprise, commercial and residential clients.`,
+    message: `Ponto Solutions Systems Unification Specialists are an elite firm of security system specialists. We design, engineer, install and program access control, video surveillance, intrusion detection and network and wireless systems for enterprise, commercial and residential clients.`,
     contacts: [
       {
         label: 'Call us:',

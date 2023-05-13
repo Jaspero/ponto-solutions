@@ -1,3 +1,3 @@
 export const STATIC_CONFIG = {
-	webUrl: 'https://ponto-solutions.web.app/'
+	webUrl: 'https://pontosolutions.com/'
 }
