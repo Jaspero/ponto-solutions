@@ -1,6 +1,6 @@
 .l {
 	position: relative;
-	background: var(--c-dark);
+	background: var(--c-lighter);
 	padding: 8rem 0;
 	overflow: hidden;
 }
@@ -10,7 +10,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: var(--c-darker);
+	background: var(--c-light);
 	transform-origin: left top;
 	transform: skewX(60deg);
 }
@@ -33,7 +33,7 @@
 	line-height: 2;
 
 	a {
-		color: var(--c-lighter);
+		color: var(--c-dark);
 		text-decoration: none;
 
 		&:hover {
